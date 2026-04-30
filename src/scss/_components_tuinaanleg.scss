@@ -1,0 +1,98 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+
+.c-content-section {
+    padding-top: $padding-long; // De 124px afstand van de pijl
+    background-color: $white;
+
+    &__title {
+        font-family: $font-heading;
+        font-size: $h2; // Of handmatig 48px zoals in je variabelen
+        color: $green;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+    }
+
+    &__intro {
+        font-family: $font-primary;
+        font-size: 18px;
+        color: $black;
+        margin-bottom: 2rem;
+    }
+
+    &__body {
+        font-family: $font-primary;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #444;
+
+        strong {
+            color: $black;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: $Blue;
+            text-decoration: underline;
+            &:hover { color: $green; }
+        }
+    }
+}
+
+// De grijze info box aan de rechterkant
+.c-info-box {
+    background-color: #f9f9f9; // Een lichte variant van $grey
+    border: 1px solid #eee;
+    border-radius: 8px;
+
+    a{
+        color: $black;
+        text-decoration: none;
+        &:hover { text-decoration: underline; }
+    }
+
+    p {
+        color: $black;
+        font-family: $font-heading;
+        font-size: 15px;
+    }
+
+    ul li {
+        margin-bottom: 8px;
+        &:last-child { margin-bottom: 0; }
+
+        a {
+            color: $Blue;
+            text-decoration: none;
+            font-size: 15px;
+            &:hover { text-decoration: underline; }
+        }
+    }
+}
+
+// Custom Button
+.c-btn-primary {
+    background-color: $Blue;
+    color: $white !important;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-family: $font-primary;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    transition: none !important; // Geen animatie zoals gevraagd
+
+    &:hover {
+        background-color: darken($Blue, 10%);
+    }
+}

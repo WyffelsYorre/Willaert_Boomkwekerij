@@ -66,6 +66,11 @@ html, body {
 
         i {
             line-height: 1;
+            color: $white;
+        }
+
+        &:active{
+            background-color: $blue;
         }
 
         &:hover {
