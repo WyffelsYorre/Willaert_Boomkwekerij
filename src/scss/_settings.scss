@@ -1,0 +1,22 @@
+$glass-bg: rgba(255, 255, 255, 0.07);
+$glass-blur: blur(2px);
+$glass-border: 1px solid rgba(255, 255, 255, 0.15);
+$font-primary: 'Open Sans', sans-serif;
+$font-heading: 'Slabo 13px', serif;
+$green: #4E9D3A;
+$white: #ffffff;
+$black: #222222;
+$Blue: #007CC3;
+$grey: #EBEBEB; 
+$h1: 52px;
+$h2: 48px;
+$padding-short: 75px;
+$padding-long: 124px;
+
+@mixin glass-effect($radius: 8px) {
+  background-color: $glass-bg;
+  backdrop-filter: $glass-blur;
+  -webkit-backdrop-filter: $glass-blur;
+  border: $glass-border;
+  border-radius: $radius;
+}
