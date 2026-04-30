@@ -1,0 +1,80 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+.c-expertise-section {
+    background-color: $white;
+    padding-top: 80px;
+
+    .c-expertise-item {
+        margin-bottom: 100px;
+        align-items: flex-start;
+    }
+
+    .c-expertise-icon {
+        width: 120px;
+        height: 120px;
+        background-color: $green;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 50px;
+        flex-shrink: 0;
+        
+        i {
+            line-height: 1;
+        }
+    }
+
+    .c-expertise-title {
+        font-family: $font-heading;
+        font-size: 32px;
+        font-weight: 700;
+        color: $black;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .c-expertise-subtitle {
+        font-family: $font-primary;
+        font-size: 20px;
+        font-weight: 400;
+        color: $black;
+        margin-bottom: 10px;
+    }
+
+    .c-expertise-text {
+        font-family: $font-primary;
+        font-size: 15px;
+        line-height: 1.6;
+        color: $black;
+        max-width: 900px;
+
+        strong {
+            display: block;
+            margin-top: 10px;
+            color: $black;
+            font-size: 16px;
+        }
+        
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .c-expertise-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .c-expertise-item {
+        text-align: center;
+        .d-flex {
+            justify-content: center !important;
+        }
+    }
+}
