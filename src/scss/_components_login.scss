@@ -2,16 +2,19 @@
 @use 'bs-core' as *;
 
 .c-login-section {
+  padding-top: 32px;
   padding-bottom: $padding-long;
   background-color: #f8f9fa;
 
   &__title {
     font-family: $font-heading;
-    font-size: $h2;
+    font-size: 2.2rem;
     color: $green;
     text-align: center;
     margin-bottom: 3rem;
     text-transform: uppercase;
+
+    @media (max-width: 767px) { font-size: 1.6rem; }
   }
 
   &__accordion {
@@ -30,17 +33,18 @@
     .accordion-button {
       padding: 25px 40px;
       font-family: $font-heading;
-      font-size: 1.4rem;
-      color: $black;
+      font-size: 1.3rem;
       background: $white;
-      box-shadow: none;
       display: flex;
-      align-items: center;
       gap: 15px;
-      // --- ACCORDION TITEL KLEINER OP GSM ---
-      @media (max-width: 404px) {
-        font-size: 1.1rem;
-        padding: 20px; // Ook iets minder padding voor meer ruimte
+      transition: all 0.3s ease;
+
+      // Styling voor vergrendelde stappen
+      &[disabled] {
+        background-color: #fcfcfc;
+        opacity: 0.6;
+        cursor: not-allowed;
+        &::before { background: #ddd; color: #999; }
       }
 
       &::before {
@@ -53,86 +57,200 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
         font-size: 1rem;
-        transition: all 0.3s ease;
-        flex-shrink: 0; // Voorkomt dat de cirkel wordt platgedrukt
-        aspect-ratio: 1 / 1; // Garandeert een perfecte cirkelvorm
       }
 
       &:not(.collapsed) {
         color: $green;
-        &::before {
-          background: $green;
-          color: $white;
-        }
+        background-color: $white;
+        &::before { background: $green; color: $white; }
       }
-    }
-
-    .accordion-body {
-      padding: 30px 40px 40px;
     }
   }
 }
 
+// ==========================================================================
+// C-FORM COMPONENT (Binnen Login Sectie)
+// ==========================================================================
+
 .c-form {
+  // Algemene label styling
   label {
     font-weight: 600;
     font-size: 14px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    display: block;
     color: $black;
   }
 
+  // Input & Select velden
   .form-control,
   .form-select {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #ddd;
+    font-family: $font-primary;
+    font-size: 15px;
     transition: all 0.3s ease;
+    background-color: $white;
 
+    // Groene focus state (Willaert Groen)
     &:focus {
-      border-color: $green;
-      box-shadow: 0 0 0 3px rgba($green, 0.1);
+      border-color: #4E9D3A; // De gevraagde kleur #4E9D3A
+      box-shadow: 0 0 0 3px rgba(78, 157, 58, 0.15);
+      outline: none;
+    }
+
+    // Error state (wanneer veld ongeldig is)
+    &.is-invalid {
+      border-color: #dc3545;
+      background-image: none; // Bootstrap icoon verbergen voor strakkere look
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+      }
     }
   }
 
-  // De groene checkbox fix
+  // Custom Error melding tekst
+  .invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: 500;
+    font-family: $font-primary;
+  }
+
+  // Toon feedback alleen bij invalid velden
+  .form-control.is-invalid + .invalid-feedback,
+  .form-select.is-invalid + .invalid-feedback {
+    display: block;
+  }
+
+  // Checkbox styling (Gesloten vinkjes)
   .form-check-input {
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
-    width: 1.25em;
-    height: 1.25em;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 
     &:checked {
-      background-color: $green;
-      border-color: $green;
+      background-color: #4E9D3A;
+      border-color: #4E9D3A;
     }
 
     &:focus {
-      box-shadow: 0 0 0 3px rgba($green, 0.1);
-      border-color: $green;
+      box-shadow: 0 0 0 3px rgba(78, 157, 58, 0.1);
+      border-color: #4E9D3A;
+    }
+  }
+
+  // ==========================================================================
+  // OPENINGSUREN TABEL (Compacte Layout)
+  // ==========================================================================
+
+  &__hours-container {
+    margin-top: 1rem;
+    
+    // Zorgt voor horizontale scroll op hele kleine mobieltjes
+    @media (max-width: 576px) {
+      overflow-x: auto;
+      padding-bottom: 10px;
     }
   }
 
   &__hours-row {
     border-bottom: 1px solid #eee;
     padding: 12px 0;
+    display: flex;
     align-items: center;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+
     &:last-child {
       border-bottom: none;
     }
 
     .day-name {
       font-weight: 700;
+      color: $black;
+      font-family: $font-heading;
     }
 
-    .time-group {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
+    // De tijd-input groep (Van - Tot)
+    .d-flex {
+      input[type="time"] {
+        padding: 6px 10px;
+        font-size: 14px;
+        min-width: 90px;
+        height: 38px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
 
-      input[type='time'] {
-        min-width: 110px;
+        // Maak grijs als de checkbox 'Gesloten' aan staat
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #ccc;
+          border-color: #eee;
+          cursor: not-allowed;
+        }
+      }
+
+      span {
+        color: #999;
+        font-weight: bold;
+        padding: 0 5px;
       }
     }
   }
+
+  // Textarea voor opmerkingen
+  textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+  }
+}
+
+// ==========================================================================
+// SUBMIT AREA & ANIMATIE
+// ==========================================================================
+
+.c-btn-primary {
+  background-color: #4E9D3A;
+  color: $white;
+  font-family: $font-heading;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 15px 40px;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 157, 58, 0.2);
+
+  &:hover:not(:disabled) {
+    background-color: darken(#4E9D3A, 8%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 157, 58, 0.3);
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+#lottieContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }

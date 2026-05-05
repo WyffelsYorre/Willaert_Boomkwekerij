@@ -60,9 +60,9 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="willaertDropdown">Willaert</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Over Willaert</a></li>
-                                    <li><a class="dropdown-item" href="#">Geschiedenis</a></li>
-                                    <li><a class="dropdown-item" href="#">Missie & Visie</a></li>
+                                    <li><a class="dropdown-item" href="meerwillaert.html">Over Willaert</a></li>
+                                    <li><a class="dropdown-item" href="geschiedenis.html">Geschiedenis</a></li>
+                                    <li><a class="dropdown-item" href="missie.html">Missie</a></li>
                                 </ul>
                             </li>
 
@@ -106,197 +106,217 @@
     <main>
         <section class="c-login-section">
             <div class="container">
-                <h1 class="c-login-section__title">Login aanvragen als professioneel in de groensector</h1>
 
-                <div class="accordion c-login-section__accordion" id="loginAccordion">
+                <!-- DEEL 1: FORMULIER CONTENT (Verdwijnt na verzenden) -->
+                <div id="formContent">
+                    <h1 class="c-login-section__title">Login aanvragen als professioneel in de groensector</h1>
 
-                    <!-- STAP 1: BEDRIJFSGEGEVENS -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step1" data-step="1">
-                                Bedrijfsgegevens
-                            </button>
-                        </h2>
-                        <div id="step1" class="accordion-collapse collapse show" data-bs-parent="#loginAccordion">
-                            <div class="accordion-body c-form">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label>Type bedrijf (*)</label>
-                                        <select class="form-select">
-                                            <option>tuinaanleg</option>
-                                            <option>tuincentrum</option>
-                                            <option>openbaar domein</option>
-                                            <option>tuinarchitect</option>
-                                        </select>
+                    <form id="loginForm" novalidate>
+                        <div class="accordion c-login-section__accordion" id="loginAccordion">
+
+                            <!-- STAP 1: BEDRIJFSGEGEVENS -->
+                            <div class="accordion-item" id="item-1">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step1" data-step="1">
+                                        Bedrijfsgegevens
+                                    </button>
+                                </h2>
+                                <div id="step1" class="accordion-collapse collapse show" data-bs-parent="#loginAccordion">
+                                    <div class="accordion-body c-form">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label>Type bedrijf (*)</label>
+                                                <select class="form-select" required>
+                                                    <option value="">Kies een type...</option>
+                                                    <option value="tuinaanleg">tuinaanleg</option>
+                                                    <option value="tuincentrum">tuincentrum</option>
+                                                    <option value="openbaar domein">openbaar domein</option>
+                                                    <option value="tuinarchitect">tuinarchitect</option>
+                                                </select>
+                                                <div class="invalid-feedback">Selecteer uw bedrijfstype.</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Naam bedrijf (*)</label>
+                                                <input type="text" class="form-control" required>
+                                                <div class="invalid-feedback">Bedrijfsnaam is verplicht.</div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label>Straat en nummer (*)</label>
+                                                <input type="text" class="form-control" required pattern=".*[0-9].*">
+                                                <div class="invalid-feedback">Huisnummer is verplicht (adres moet een getal bevatten).</div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Postcode (*)</label>
+                                                <input type="text" class="form-control" required pattern="[0-9]*" inputmode="numeric">
+                                                <div class="invalid-feedback">Alleen cijfers toegestaan.</div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <label>Plaats (*)</label>
+                                                <input type="text" class="form-control" required>
+                                                <div class="invalid-feedback">Plaats is verplicht.</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Land (*)</label>
+                                                <select class="form-select" required>
+                                                    <option value="België">België</option>
+                                                    <option value="Nederland">Nederland</option>
+                                                    <option value="Frankrijk">Frankrijk</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>BTW-nummer (*)</label>
+                                                <!-- Validatie: Moet beginnen met BE, gevolgd door 10 cijfers (optioneel punten/spaties) -->
+                                                <input type="text" class="form-control" placeholder="BE 0123.456.789" required pattern="^(BE|be)\s?[0-1][0-9]{3}\.?[0-9]{3}\.?[0-9]{3}$">
+                                                <div class="invalid-feedback">Vul een geldig BTW-nummer in (bijv. BE 0123.456.789).</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label>Naam bedrijf (*)</label>
-                                        <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <!-- STAP 2: OPENINGSUREN & LEVERINGEN -->
+                            <div class="accordion-item" id="item-2">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" id="btn-step-2" type="button" data-bs-toggle="collapse" data-bs-target="#step2" data-step="2" disabled>
+                                        Openingsuren & Leveringen
+                                    </button>
+                                </h2>
+                                <div id="step2" class="accordion-collapse collapse" data-bs-parent="#loginAccordion">
+                                    <div class="accordion-body c-form">
+                                        <p class="small text-muted mb-4">Vul uw uren in of vink het vakje aan dat betekend 'Gesloten'.</p>
+                                        <div class="c-form__hours-container">
+                                            <div class="row fw-bold mb-2 d-none d-md-flex text-center border-bottom pb-2">
+                                                <div class="col-md-2 text-start">Dag</div>
+                                                <div class="col-md-4">Tijdsblok 1</div>
+                                                <div class="col-md-4">Tijdsblok 2</div>
+                                                <div class="col-md-2">Gesloten</div>
+                                            </div>
+
+                                            <!-- Maandag t/m Vrijdag -->
+                                            <div class="c-form__hours-row row align-items-center py-2 border-bottom">
+                                                <div class="col-md-2 fw-bold">Maandag</div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-2 text-center"><input type="checkbox" class="form-check-input"></div>
+                                            </div>
+                                            <div class="c-form__hours-row row align-items-center py-2 border-bottom">
+                                                <div class="col-md-2 fw-bold">Dinsdag</div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-2 text-center"><input type="checkbox" class="form-check-input"></div>
+                                            </div>
+                                            <div class="c-form__hours-row row align-items-center py-2 border-bottom">
+                                                <div class="col-md-2 fw-bold">Woensdag</div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-2 text-center"><input type="checkbox" class="form-check-input"></div>
+                                            </div>
+                                            <div class="c-form__hours-row row align-items-center py-2 border-bottom">
+                                                <div class="col-md-2 fw-bold">Donderdag</div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-2 text-center"><input type="checkbox" class="form-check-input"></div>
+                                            </div>
+                                            <div class="c-form__hours-row row align-items-center py-2 border-bottom">
+                                                <div class="col-md-2 fw-bold">Vrijdag</div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex align-items-center gap-2"><input type="time" class="form-control form-control-sm"><span>-</span><input type="time" class="form-control form-control-sm"></div>
+                                                </div>
+                                                <div class="col-md-2 text-center"><input type="checkbox" class="form-check-input"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <label>Opmerking leveringsuren</label>
+                                            <textarea class="form-control" rows="2" placeholder="Bijv. Leveringen liefst voor 10u..."></textarea>
+                                        </div>
                                     </div>
-                                    <div class="col-12">
-                                        <label>Straat en nummer (*)</label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label>Postcode (*)</label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <label>Plaats (*)</label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Land (*)</label>
-                                        <select class="form-select">
-                                            <option>België</option>
-                                            <option>Nederland</option>
-                                            <option>Frankrijk</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>BTW-nummer (*)</label>
-                                        <input type="text" class="form-control" placeholder="BE 9999.999.999" required>
+                                </div>
+                            </div>
+
+                            <!-- STAP 3: CONTACTGEGEVENS -->
+                            <div class="accordion-item" id="item-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" id="btn-step-3" type="button" data-bs-toggle="collapse" data-bs-target="#step3" data-step="3" disabled>
+                                        Contactgegevens
+                                    </button>
+                                </h2>
+                                <div id="step3" class="accordion-collapse collapse" data-bs-parent="#loginAccordion">
+                                    <div class="accordion-body c-form">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label>Contactpersoon (*)</label>
+                                                <input type="text" class="form-control" required>
+                                                <div class="invalid-feedback">Naam is verplicht.</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Telefoon (*)</label>
+                                                <input type="tel" class="form-control" required pattern="^[\d\s\+\.]{8,20}$" inputmode="tel">
+                                                <div class="invalid-feedback">Geldig telefoonnummer verplicht.</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>GSM (*)</label>
+                                                <input type="tel" class="form-control" required pattern="^[\d\s\+\.]{9,20}$" inputmode="tel">
+                                                <div class="invalid-feedback">Geldig GSM-nummer verplicht.</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>E-mail contact (*)</label>
+                                                <input type="email" class="form-control" required>
+                                                <div class="invalid-feedback">Geldig e-mailadres verplicht.</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>E-mail voor facturatie</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                            <div class="col-12">
+                                                <label>Website</label>
+                                                <input type="url" class="form-control" placeholder="https://www.uwbedrijf.be">
+                                            </div>
+                                            <div class="col-12">
+                                                <label>Opmerkingen</label>
+                                                <textarea class="form-control" rows="3" placeholder="Extra opmerkingen..."></textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- STAP 2: OPENINGSUREN & LEVERINGEN -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step2" data-step="2">
-                                Openingsuren & Leveringen
+                        <div class="text-center mt-5 mb-5">
+                            <button type="submit" id="submitBtn" class="btn c-btn-primary btn-lg px-5" disabled>
+                                Login-aanvraag versturen
                             </button>
-                        </h2>
-                        <div id="step2" class="accordion-collapse collapse" data-bs-parent="#loginAccordion">
-                            <div class="accordion-body c-form">
-                                <p class="small text-muted mb-4">Indien gesloten op een dag, vink 'Gesloten' aan.</p>
-
-                                <div class="c-form__hours-table">
-                                    <!-- Tabel Header -->
-                                    <div class="row fw-bold mb-2 d-none d-md-flex text-center">
-                                        <div class="col-2 text-start">Dag</div>
-                                        <div class="col-4">Voormiddag (Van - Tot)</div>
-                                        <div class="col-4">Namiddag (Van - Tot)</div>
-                                        <div class="col-2">Gesloten</div>
-                                    </div>
-
-                                    <!-- Maandag t/m Vrijdag -->
-                                    <!-- Maandag -->
-                                    <div class="c-form__hours-row row text-center">
-                                        <div class="col-md-2 text-start day-name">Maandag</div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
-                                    </div>
-                                    <!-- Dinsdag -->
-                                    <div class="c-form__hours-row row text-center">
-                                        <div class="col-md-2 text-start day-name">Dinsdag</div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
-                                    </div>
-                                    <!-- Woensdag -->
-                                    <div class="c-form__hours-row row text-center">
-                                        <div class="col-md-2 text-start day-name">Woensdag</div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
-                                    </div>
-                                    <!-- Donderdag -->
-                                    <div class="c-form__hours-row row text-center">
-                                        <div class="col-md-2 text-start day-name">Donderdag</div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
-                                    </div>
-                                    <!-- Vrijdag -->
-                                    <div class="c-form__hours-row row text-center">
-                                        <div class="col-md-2 text-start day-name">Vrijdag</div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-4 time-group mb-2 mb-md-0">
-                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
-                                        </div>
-                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-4">
-                                    <label>Opmerking leveringsuren</label>
-                                    <textarea class="form-control" rows="2" placeholder="Bijv. Leveringen liefst voor 10u..."></textarea>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-
-                    <!-- STAP 3: CONTACTGEGEVENS -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step3" data-step="3">
-                                Contactgegevens
-                            </button>
-                        </h2>
-                        <div id="step3" class="accordion-collapse collapse" data-bs-parent="#loginAccordion">
-                            <div class="accordion-body c-form">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label>Contactpersoon (*)</label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>Telefoon (*)</label>
-                                        <input type="tel" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>GSM (*)</label>
-                                        <input type="tel" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>E-mail contact (*)</label>
-                                        <input type="email" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>E-mail voor facturatie</label>
-                                        <input type="email" class="form-control">
-                                    </div>
-                                    <div class="col-12">
-                                        <label>Website</label>
-                                        <input type="url" class="form-control" placeholder="https://www.uwbedrijf.be">
-                                    </div>
-                                    <div class="col-12">
-                                        <label>Opmerkingen</label>
-                                        <textarea class="form-control" rows="3" placeholder="Extra opmerkingen bij uw aanvraag..."></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    </form>
                 </div>
 
-                <!-- Submit knop buiten de accordion -->
-                <div class="text-center mt-5 mb-5">
-                    <button type="submit" class="btn c-btn-primary btn-lg px-5">Login-aanvraag versturen</button>
+                <!-- DEEL 2: SUCCES MELDING (Standaard verborgen) -->
+                <div id="successState" class="text-center" style="display: none; padding: 80px 0;">
+                    <div id="lottieContainer" style="width: 180px; height: 180px; margin: 0 auto;"></div>
+                    <h2 class="c-login-section__title" style="margin-top: 30px; color: #4E9D3A;">Bedankt voor de aanvraag!</h2>
+                    <p class="lead" style="max-width: 650px; margin: 0 auto; color: #333;">
+                        We zullen je aanvraag bekijken en je krijgt binnen een paar dagen een mailtje terug.
+                    </p>
                 </div>
+
             </div>
         </section>
 
@@ -304,36 +324,48 @@
 
     <section class="c-newsletter">
         <div class="container">
-            <div class="c-newsletter__card">
-                <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
-                <p class="c-newsletter__text">
-                    Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
-                    Schrijf u nu in voor de Willaert-nieuwsbrief.
-                </p>
+            <div class="c-newsletter__card" id="newsletterCard">
+                <div id="newsletterSuccess" style="display: none;">
+                    <div id="lottieContainer" style="width: 150px; height: 150px; margin: 0 auto;"></div>
+                    <h2 class="c-newsletter__title">Bedankt voor uw inschrijving!</h2>
+                    <p class="c-newsletter__text">U ontvangt spoedig onze laatste groene updates.</p>
+                </div>
 
-                <form class="c-newsletter__form">
-                    <div class="c-newsletter__interests">
-                        <!-- Functionele Custom Checkboxes -->
-                        <label class="c-newsletter__check-container">
-                            <input type="checkbox" checked>
-                            <span class="c-newsletter__checkmark"></span>
-                            Tuinaanleg
-                        </label>
-                        <label class="c-newsletter__check-container">
-                            <input type="checkbox" checked>
-                            <span class="c-newsletter__checkmark"></span>
-                            Tuincentrum
-                        </label>
-                    </div>
+                <div id="newsletterFormContent">
+                    <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
+                    <p class="c-newsletter__text">
+                        Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
+                    </p>
 
-                    <div class="c-newsletter__input-group">
-                        <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" required>
-                        <button type="submit" class="c-newsletter__submit">Abboneren</button>
-                    </div>
-                </form>
+                    <form class="c-newsletter__form" id="newsletterForm" novalidate>
+                        <div class="c-newsletter__interests">
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuinaanleg
+                            </label>
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuincentrum
+                            </label>
+                        </div>
+
+                        <div class="c-newsletter__input-wrapper">
+                            <div class="c-newsletter__input-group">
+                                <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" id="newsletterEmail" required>
+                                <button type="submit" class="c-newsletter__submit">Abonneren</button>
+                            </div>
+                            <span class="c-newsletter__error-msg" id="emailError">Oeps! Dit lijkt geen geldig e-mailadres.</span>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lottie Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </body>
 <footer class="c-footer">
     <div class="container">

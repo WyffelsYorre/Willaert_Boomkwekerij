@@ -60,9 +60,9 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="willaertDropdown">Willaert</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Over Willaert</a></li>
-                                    <li><a class="dropdown-item" href="#">Geschiedenis</a></li>
-                                    <li><a class="dropdown-item" href="#">Missie & Visie</a></li>
+                                    <li><a class="dropdown-item" href="meerwillaert.html">Over Willaert</a></li>
+                                    <li><a class="dropdown-item" href="geschiedenis.html">Geschiedenis</a></li>
+                                    <li><a class="dropdown-item" href="missie.html">Missie</a></li>
                                 </ul>
                             </li>
 
@@ -164,28 +164,36 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-3">
                         <div class="c-feature-item">
-                            <a href="features.html"><div class="c-feature-icon"><i class="bi bi-star"></i></div></a>
+                            <a href="features.html">
+                                <div class="c-feature-icon"><i class="bi bi-star"></i></div>
+                            </a>
                             <h3 class="c-feature-item__title">Expertise</h3>
                             <p class="c-feature-item__text">Ruim 40 jaar kennis en ervaring in de tuinsector</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="c-feature-item">
-                            <a href="features.html"><div class="c-feature-icon"><i class="bi bi-tree"></i></div></a>
+                            <a href="features.html">
+                                <div class="c-feature-icon"><i class="bi bi-tree"></i></div>
+                            </a>
                             <h3 class="c-feature-item__title">Assortiment</h3>
                             <p class="c-feature-item__text">Meer dan 3000 variëteiten met topkwaliteit</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="c-feature-item">
-                            <a href="features.html"><div class="c-feature-icon"><i class="bi bi-truck"></i></div></a>
+                            <a href="features.html">
+                                <div class="c-feature-icon"><i class="bi bi-truck"></i></div>
+                            </a>
                             <h3 class="c-feature-item__title">Logistieke kracht</h3>
                             <p class="c-feature-item__text">Ruim 40 jaar kennis en ervaring in de tuinsector</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="c-feature-item">
-                            <a href="features.html"><div class="c-feature-icon"><i class="bi bi-currency-euro"></i></div></a>
+                            <a href="features.html">
+                                <div class="c-feature-icon"><i class="bi bi-currency-euro"></i></div>
+                            </a>
                             <h3 class="c-feature-item__title">Cash & Carry</h3>
                             <p class="c-feature-item__text">Kom zelf uw keuze maken</p>
                         </div>
@@ -194,38 +202,50 @@
             </div>
         </section>
     </main>
-   <section class="c-newsletter">
+    <section class="c-newsletter">
         <div class="container">
-            <div class="c-newsletter__card">
-                <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
-                <p class="c-newsletter__text">
-                    Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
-                    Schrijf u nu in voor de Willaert-nieuwsbrief.
-                </p>
+            <div class="c-newsletter__card" id="newsletterCard">
+                <div id="newsletterSuccess" style="display: none;">
+                    <div id="lottieContainer" style="width: 150px; height: 150px; margin: 0 auto;"></div>
+                    <h2 class="c-newsletter__title">Bedankt voor uw inschrijving!</h2>
+                    <p class="c-newsletter__text">U ontvangt spoedig onze laatste groene updates.</p>
+                </div>
 
-                <form class="c-newsletter__form">
-                    <div class="c-newsletter__interests">
-                        <!-- Functionele Custom Checkboxes -->
-                        <label class="c-newsletter__check-container">
-                            <input type="checkbox" checked>
-                            <span class="c-newsletter__checkmark"></span>
-                            Tuinaanleg
-                        </label>
-                        <label class="c-newsletter__check-container">
-                            <input type="checkbox" checked>
-                            <span class="c-newsletter__checkmark"></span>
-                            Tuincentrum
-                        </label>
-                    </div>
+                <div id="newsletterFormContent">
+                    <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
+                    <p class="c-newsletter__text">
+                        Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
+                    </p>
 
-                    <div class="c-newsletter__input-group">
-                        <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" required>
-                        <button type="submit" class="c-newsletter__submit">Abboneren</button>
-                    </div>
-                </form>
+                    <form class="c-newsletter__form" id="newsletterForm" novalidate>
+                        <div class="c-newsletter__interests">
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuinaanleg
+                            </label>
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuincentrum
+                            </label>
+                        </div>
+
+                        <div class="c-newsletter__input-wrapper">
+                            <div class="c-newsletter__input-group">
+                                <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" id="newsletterEmail" required>
+                                <button type="submit" class="c-newsletter__submit">Abonneren</button>
+                            </div>
+                            <span class="c-newsletter__error-msg" id="emailError">Oeps! Dit lijkt geen geldig e-mailadres.</span>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lottie Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </body>
 <footer class="c-footer">
     <div class="container">

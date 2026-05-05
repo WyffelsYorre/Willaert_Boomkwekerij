@@ -635,12 +635,18 @@ html, body {
         }
     }
 
+    // Wrapper voor input + error bericht
+    &__input-wrapper {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+        position: relative;
+    }
+
     &__input-group {
         display: flex;
         gap: 15px;
         width: 100%;
-        max-width: 650px;
-        margin: 0 auto;
 
         @media (max-width: 767.98px) {
             flex-direction: column;
@@ -651,15 +657,30 @@ html, body {
     &__input {
         flex: 1 1 350px; 
         min-width: 0; 
-        
         height: 52px;
         border-radius: 6px;
-        border: none;
+        border: 2px solid transparent; // Border gereserveerd voor focus/error
         padding: 0 20px;
         font-family: $font-primary;
         font-size: 16px;
         background-color: $white;
         color: $black;
+        transition: all 0.3s ease;
+
+        // Groene active state
+        &:focus {
+            outline: none;
+            border-color: $green;
+            box-shadow: 0 0 0 4px rgba($green, 0.2);
+        }
+
+        // Error state
+        &.is-invalid {
+            border-color: #ff4d4d;
+            &:focus {
+                box-shadow: 0 0 0 4px rgba(#ff4d4d, 0.2);
+            }
+        }
 
         @media (max-width: 767.98px) {
             flex-basis: auto;
@@ -667,10 +688,27 @@ html, body {
         }
     }
 
+    &__error-msg {
+        display: block;
+        color: $white;
+        font-size: 13px;
+        margin-top: 8px;
+        font-family: $font-primary;
+        text-align: left;
+        opacity: 0;
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+
+        &.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     &__submit {
         flex-shrink: 0;
         white-space: nowrap;
-        
         background-color: $green;
         color: $white;
         border: none;
@@ -690,5 +728,13 @@ html, body {
         @media (max-width: 767.98px) {
             width: 100%;
         }
+    }
+
+    // Container voor de Lottie animatie na succes
+    #lottieContainer {
+        margin: 0 auto 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
