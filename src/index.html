@@ -56,9 +56,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="willaertDropdown">Willaert</a>
                             <ul class="dropdown-menu c-dropdown-glass">
-                                <li><a class="dropdown-item" href="#">Meer over Willaert</a></li>
-                                <li><a class="dropdown-item" href="#">Geschiedenis</a></li>
-                                <li><a class="dropdown-item" href="#">Missie</a></li>
+                                <li><a class="dropdown-item" href="meerwillaert.html">Meer over Willaert</a></li>
+                                <li><a class="dropdown-item" href="geschiedenis.html">Geschiedenis</a></li>
+                                <li><a class="dropdown-item" href="missie.html">Missie</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#">Plantengids</a></li>
@@ -299,36 +299,48 @@
 
     <section class="c-newsletter">
         <div class="container">
-            <div class="c-newsletter__card">
-                <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
-                <p class="c-newsletter__text">
-                    Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
-                    Schrijf u nu in voor de Willaert-nieuwsbrief.
-                </p>
+            <div class="c-newsletter__card" id="newsletterCard">
+                <div id="newsletterSuccess" style="display: none;">
+                    <div id="lottieContainer" style="width: 150px; height: 150px; margin: 0 auto;"></div>
+                    <h2 class="c-newsletter__title">Bedankt voor uw inschrijving!</h2>
+                    <p class="c-newsletter__text">U ontvangt spoedig onze laatste groene updates.</p>
+                </div>
+                
+                <div id="newsletterFormContent">
+                    <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
+                    <p class="c-newsletter__text">
+                        Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
+                    </p>
 
-                <form class="c-newsletter__form">
-                    <div class="c-newsletter__interests">
-                        <!-- Functionele Custom Checkboxes -->
-                        <label class="c-newsletter__check-container">
-                            <input type="checkbox" checked>
-                            <span class="c-newsletter__checkmark"></span>
-                            Tuinaanleg
-                        </label>
-                        <label class="c-newsletter__check-container">
-                            <input type="checkbox" checked>
-                            <span class="c-newsletter__checkmark"></span>
-                            Tuincentrum
-                        </label>
-                    </div>
+                    <form class="c-newsletter__form" id="newsletterForm" novalidate>
+                        <div class="c-newsletter__interests">
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuinaanleg
+                            </label>
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuincentrum
+                            </label>
+                        </div>
 
-                    <div class="c-newsletter__input-group">
-                        <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" required>
-                        <button type="submit" class="c-newsletter__submit">Abboneren</button>
-                    </div>
-                </form>
+                        <div class="c-newsletter__input-wrapper">
+                            <div class="c-newsletter__input-group">
+                                <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" id="newsletterEmail" required>
+                                <button type="submit" class="c-newsletter__submit">Abonneren</button>
+                            </div>
+                            <span class="c-newsletter__error-msg" id="emailError">Oeps! Dit lijkt geen geldig e-mailadres.</span>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lottie Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </body>
 <footer class="c-footer" id="footer">
     <div class="container">

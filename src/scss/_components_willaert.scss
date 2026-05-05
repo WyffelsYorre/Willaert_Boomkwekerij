@@ -1,0 +1,97 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+.c-about {
+    padding-bottom: $padding-long;
+    padding-top: 32px;
+
+    &__container {
+        background: $white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+
+        @media (max-width: 991px) {
+            padding: 30px;
+        }
+    }
+
+    &__title {
+        font-family: $font-heading;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: $black;
+    }
+
+    &__subtitle {
+        color: $green;
+        font-family: $font-heading;
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    &__text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333;
+
+        strong { font-weight: 700; }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+            li {
+                padding-left: 15px;
+                position: relative;
+                margin-bottom: 8px;
+                &::before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &__image-float {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+
+        @media (min-width: 992px) {
+            float: right;
+            margin-left: 25px;
+        }
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .btn-side {
+            padding: 20px;
+            border-radius: 12px;
+            font-family: $font-heading;
+            font-size: 1.2rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+
+            &--blue {
+                background-color: $Blue;
+                color: $white;
+                &:hover { background-color: darken($Blue, 10%); }
+            }
+
+            &--light {
+                color: $Blue;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+                &:hover { background-color: $Blue; color: $white; }
+            }
+        }
+    }
+}
