@@ -1,0 +1,138 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+.c-login-section {
+  padding-bottom: $padding-long;
+  background-color: #f8f9fa;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $h2;
+    color: $green;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__accordion {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .accordion-item {
+      border: none;
+      background: $white;
+      border-radius: 12px !important;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      padding: 25px 40px;
+      font-family: $font-heading;
+      font-size: 1.4rem;
+      color: $black;
+      background: $white;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      // --- ACCORDION TITEL KLEINER OP GSM ---
+      @media (max-width: 404px) {
+        font-size: 1.1rem;
+        padding: 20px; // Ook iets minder padding voor meer ruimte
+      }
+
+      &::before {
+        content: attr(data-step);
+        background: #eee;
+        color: $black;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        flex-shrink: 0; // Voorkomt dat de cirkel wordt platgedrukt
+        aspect-ratio: 1 / 1; // Garandeert een perfecte cirkelvorm
+      }
+
+      &:not(.collapsed) {
+        color: $green;
+        &::before {
+          background: $green;
+          color: $white;
+        }
+      }
+    }
+
+    .accordion-body {
+      padding: 30px 40px 40px;
+    }
+  }
+}
+
+.c-form {
+  label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: $black;
+  }
+
+  .form-control,
+  .form-select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $green;
+      box-shadow: 0 0 0 3px rgba($green, 0.1);
+    }
+  }
+
+  // De groene checkbox fix
+  .form-check-input {
+    cursor: pointer;
+    width: 1.25em;
+    height: 1.25em;
+
+    &:checked {
+      background-color: $green;
+      border-color: $green;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($green, 0.1);
+      border-color: $green;
+    }
+  }
+
+  &__hours-row {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+    align-items: center;
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .day-name {
+      font-weight: 700;
+    }
+
+    .time-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+
+      input[type='time'] {
+        min-width: 110px;
+      }
+    }
+  }
+}

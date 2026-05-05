@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willaert voor het openbaar domein - Groothandel voor groenprofessionals</title>
+    <link rel="icon" type="image/png" href="./img/willaert-logo-color.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+
+    <header class="c-nav-white">
+        <div class="c-nav-white__top-bar">
+            <div class="dropdown">
+                <div class="c-nav-white__badge">
+                    <span>Vandaag open tot 18:00u</span>
+                    <i class="bi bi-chevron-down ms-1"></i>
+                </div>
+
+                <div class="dropdown-menu c-nav-white__hours-dropdown p-3">
+                    <div class="mb-2">
+                        <h6 class="opening-title">Roeselare</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><span>Ma - Vr:</span> 07:00 - 18:00</li>
+                            <li><span>Za:</span> 08:00 - 11:45</li>
+                            <li><span>Zo:</span> Gesloten</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 class="opening-title">Oudsbergen</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><span>Ma - Vr:</span> 08:00 - 17:00</li>
+                            <li><span>Za - Zo:</span> Gesloten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-xxl mt-3">
+            <div class="container d-flex flex-column align-items-start">
+
+                <div class="d-flex align-items-center justify-content-between w-100">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="./img/willaert-logo-color.webp" alt="Willaert" class="c-nav-white__logo">
+                    </a>
+
+                    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#whiteNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-center" id="whiteNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="willaertDropdown">Willaert</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Over Willaert</a></li>
+                                    <li><a class="dropdown-item" href="#">Geschiedenis</a></li>
+                                    <li><a class="dropdown-item" href="#">Missie & Visie</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a class="nav-link" href="#">Plantengids</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Webshop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Inspiratiepagina</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Mijn Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                        </ul>
+
+                        <div class="c-nav-white__icons d-flex fs-5 align-items-center ms-xxl-4 mt-3 mt-xxl-0">
+                            <i class="bi bi-search"></i>
+                            <i class="bi bi-person is-active"></i>
+                            <i class="bi bi-cart"></i>
+
+                            <div class="c-nav-white__lang-wrapper">
+                                <i class="bi bi-translate"></i>
+                                <div class="c-nav-white__lang-switcher">
+                                    <span class="badge rounded-pill">NL</span>
+                                    <span class="badge rounded-pill">FR</span>
+                                    <span class="badge rounded-pill">EN</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-nav-white__breadcrumbs mt-2">
+                    <a href="index.html" class="breadcrumb-item is-home">
+                        <i class="bi bi-house-door"></i> Home
+                    </a>
+                    <div class="breadcrumb-item is-current">
+                        <i class="bi bi-input-cursor-text"></i>Login aanvragen
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="c-login-section">
+            <div class="container">
+                <h1 class="c-login-section__title">Login aanvragen als professioneel in de groensector</h1>
+
+                <div class="accordion c-login-section__accordion" id="loginAccordion">
+
+                    <!-- STAP 1: BEDRIJFSGEGEVENS -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step1" data-step="1">
+                                Bedrijfsgegevens
+                            </button>
+                        </h2>
+                        <div id="step1" class="accordion-collapse collapse show" data-bs-parent="#loginAccordion">
+                            <div class="accordion-body c-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label>Type bedrijf (*)</label>
+                                        <select class="form-select">
+                                            <option>tuinaanleg</option>
+                                            <option>tuincentrum</option>
+                                            <option>openbaar domein</option>
+                                            <option>tuinarchitect</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Naam bedrijf (*)</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Straat en nummer (*)</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Postcode (*)</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>Plaats (*)</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Land (*)</label>
+                                        <select class="form-select">
+                                            <option>België</option>
+                                            <option>Nederland</option>
+                                            <option>Frankrijk</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>BTW-nummer (*)</label>
+                                        <input type="text" class="form-control" placeholder="BE 9999.999.999" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STAP 2: OPENINGSUREN & LEVERINGEN -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step2" data-step="2">
+                                Openingsuren & Leveringen
+                            </button>
+                        </h2>
+                        <div id="step2" class="accordion-collapse collapse" data-bs-parent="#loginAccordion">
+                            <div class="accordion-body c-form">
+                                <p class="small text-muted mb-4">Indien gesloten op een dag, vink 'Gesloten' aan.</p>
+
+                                <div class="c-form__hours-table">
+                                    <!-- Tabel Header -->
+                                    <div class="row fw-bold mb-2 d-none d-md-flex text-center">
+                                        <div class="col-2 text-start">Dag</div>
+                                        <div class="col-4">Voormiddag (Van - Tot)</div>
+                                        <div class="col-4">Namiddag (Van - Tot)</div>
+                                        <div class="col-2">Gesloten</div>
+                                    </div>
+
+                                    <!-- Maandag t/m Vrijdag -->
+                                    <!-- Maandag -->
+                                    <div class="c-form__hours-row row text-center">
+                                        <div class="col-md-2 text-start day-name">Maandag</div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
+                                    </div>
+                                    <!-- Dinsdag -->
+                                    <div class="c-form__hours-row row text-center">
+                                        <div class="col-md-2 text-start day-name">Dinsdag</div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
+                                    </div>
+                                    <!-- Woensdag -->
+                                    <div class="c-form__hours-row row text-center">
+                                        <div class="col-md-2 text-start day-name">Woensdag</div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
+                                    </div>
+                                    <!-- Donderdag -->
+                                    <div class="c-form__hours-row row text-center">
+                                        <div class="col-md-2 text-start day-name">Donderdag</div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
+                                    </div>
+                                    <!-- Vrijdag -->
+                                    <div class="c-form__hours-row row text-center">
+                                        <div class="col-md-2 text-start day-name">Vrijdag</div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 time-group mb-2 mb-md-0">
+                                            <input type="time" class="form-control"> <span>-</span> <input type="time" class="form-control">
+                                        </div>
+                                        <div class="col-md-2"><input type="checkbox" class="form-check-input"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <label>Opmerking leveringsuren</label>
+                                    <textarea class="form-control" rows="2" placeholder="Bijv. Leveringen liefst voor 10u..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STAP 3: CONTACTGEGEVENS -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step3" data-step="3">
+                                Contactgegevens
+                            </button>
+                        </h2>
+                        <div id="step3" class="accordion-collapse collapse" data-bs-parent="#loginAccordion">
+                            <div class="accordion-body c-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label>Contactpersoon (*)</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Telefoon (*)</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>GSM (*)</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>E-mail contact (*)</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>E-mail voor facturatie</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Website</label>
+                                        <input type="url" class="form-control" placeholder="https://www.uwbedrijf.be">
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Opmerkingen</label>
+                                        <textarea class="form-control" rows="3" placeholder="Extra opmerkingen bij uw aanvraag..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Submit knop buiten de accordion -->
+                <div class="text-center mt-5 mb-5">
+                    <button type="submit" class="btn c-btn-primary btn-lg px-5">Login-aanvraag versturen</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="c-newsletter">
+        <div class="container">
+            <div class="c-newsletter__card">
+                <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
+                <p class="c-newsletter__text">
+                    Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
+                    Schrijf u nu in voor de Willaert-nieuwsbrief.
+                </p>
+
+                <form class="c-newsletter__form">
+                    <div class="c-newsletter__interests">
+                        <!-- Functionele Custom Checkboxes -->
+                        <label class="c-newsletter__check-container">
+                            <input type="checkbox" checked>
+                            <span class="c-newsletter__checkmark"></span>
+                            Tuinaanleg
+                        </label>
+                        <label class="c-newsletter__check-container">
+                            <input type="checkbox" checked>
+                            <span class="c-newsletter__checkmark"></span>
+                            Tuincentrum
+                        </label>
+                    </div>
+
+                    <div class="c-newsletter__input-group">
+                        <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" required>
+                        <button type="submit" class="c-newsletter__submit">Abboneren</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+<footer class="c-footer">
+    <div class="container">
+        <div class="row align-items-stretch">
+
+            <!-- Linker kolom: Adressen -->
+            <div class="col-lg-3 c-footer__col">
+                <div class="c-footer__address">
+                    <p>HAZEGOEDWEG 5<br>8800 Roeselare (BE)</p>
+                    <p>Email: <a href="mailto:Info@willaert.be">Info@willaert.be</a></p>
+                </div>
+                <div class="c-footer__address mt-4">
+                    <p>INDUSTRIEWEG NOORD 1173<br>3660 OUDSBERGEN (BE)</p>
+                    <p>Email: <a href="mailto:Oudsbergen@willaert.be">Oudsbergen@willaert.be</a></p>
+                </div>
+            </div>
+
+            <!-- Middelste kolom: Socials & Info -->
+            <div class="col-lg-6 c-footer__col c-footer__col--center">
+                <h3 class="c-footer__title">Willaert Boomkwekerij</h3>
+                <p class="c-footer__intro">
+                    Volg ons op sociale media voor dagelijkse inspiratie, de nieuwste leveringen en een blik achter de schermen bij de grootste plantenmarkt van België.
+                </p>
+                <p class="c-footer__tel">Tel: <a href="tel:+32051241344">+32(0)51/24 13 44</a></p>
+
+                <div class="c-footer__socials">
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Rechter kolom: Pagina's -->
+            <div class="col-lg-3 c-footer__col">
+                <h3 class="c-footer__title">Pagina's</h3>
+                <ul class="c-footer__links">
+                    <li><a href="#">Onze expertise</a></li>
+                    <li><a href="#">Inspiratie</a></li>
+                    <li><a href="#">Plantengids</a></li>
+                    <li><a href="#">Webshop</a></li>
+                    <li><a href="#">Praktisch</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Copyright gedeelte -->
+        <div class="c-footer__bottom">
+            <p>Geen particuliere verkoop - groothandel voor professionelen in de groensector</p>
+            <p>Copyright Willaert NV - Deze website maakt gebruikt van cookies</p>
+        </div>
+    </div>
+</footer>
+
+</html>
