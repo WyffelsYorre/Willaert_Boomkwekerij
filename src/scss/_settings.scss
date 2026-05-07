@@ -12,6 +12,8 @@ $h1: 52px;
 $h2: 48px;
 $padding-short: 75px;
 $padding-long: 124px;
+$pg-light-bg: #f8f9fa;
+$pg-border: #f0f0f0;
 
 @mixin glass-effect($radius: 8px) {
   background-color: $glass-bg;

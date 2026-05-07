@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willaert Boomkwekerij</title>
+    <link rel="icon" type="image/png" href="./img/willaert-logo-color.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+    <header class="c-header2">
+        <!-- Top Bar met Openingstijden -->
+        <div class="c-top-bar">
+            <div class="dropdown">
+                <div class="c-opening-badge" id="openingHoursTrigger" data-bs-toggle="dropdown">
+                    <span>Vandaag open tot 18:00u</span>
+                    <i class="bi bi-chevron-down ms-1"></i>
+                </div>
+
+                <div class="dropdown-menu c-dropdown-hours p-3">
+                    <div class="c-hours-section mb-3">
+                        <h6 class="opening-title">Roeselare</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><span>Ma - Vr:</span> 07:00 - 18:00</li>
+                            <li><span>Za:</span> 08:00 - 11:45</li>
+                            <li><span>Zo:</span> Gesloten</li>
+                        </ul>
+                    </div>
+                    <div class="c-hours-section">
+                        <h6 class="opening-title">Oudsbergen</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><span>Ma - Vr:</span> 08:00 - 17:00</li>
+                            <li><span>Za - Zo:</span> Gesloten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigatie -->
+        <nav class="navbar navbar-expand-xxl navbar-dark mt-3">
+            <div class="container d-flex align-items-center">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./img/willaert-logo-wit.webp" alt="Willaert" class="c-logo">
+                </a>
+
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="willaertDropdown">Willaert</a>
+                            <ul class="dropdown-menu c-dropdown-glass">
+                                <li><a class="dropdown-item" href="meerwillaert.html">Meer over Willaert</a></li>
+                                <li><a class="dropdown-item" href="geschiedenis.html">Geschiedenis</a></li>
+                                <li><a class="dropdown-item" href="missie.html">Missie</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Plantengids</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Webshop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Inspiratiepagina</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Mijn Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                    </ul>
+
+                    <div class="c-header__icons d-flex text-white fs-5 align-items-center ms-xxl-4 mt-3 mt-xxl-0">
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-person"></i>
+                        <i class="bi bi-cart"></i>
+
+                        <div class="c-language-wrapper">
+                            <i class="bi bi-translate c-language-trigger"></i>
+                            <div class="c-language-switcher">
+                                <span class="badge rounded-pill">NL</span>
+                                <span class="badge rounded-pill">ENG</span>
+                                <span class="badge rounded-pill">FR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- BREADCRUMBS MET GLASS EFFECT -->
+        <div class="container">
+            <nav class="c-nav-glass__breadcrumbs" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item is-home">
+                        <a href="index.html"><i class="bi bi-house"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item is-current">
+                        <i class="bi bi-leaf"></i>Plantengids
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- NIEUWE Hero Content (Plantengids stijl) -->
+        <div class="c-hero-content d-flex align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center text-white">
+                        <h1 class="c-hero-title-large">Plantengids</h1>
+
+                        <div class="c-hero-search-box">
+                            <p class="c-hero-search-text">Webshop enkel voor Proffesionelen in de groensector</p>
+
+                            <div class="c-hero-search-input-wrapper">
+                                <form id="heroSearchForm" class="input-group">
+                                    <span class="input-group-text border-0 bg-transparent ps-4">
+                                        <i class="bi bi-search text-muted"></i>
+                                    </span>
+
+                                    <input type="text" id="headerSearch" class="form-control border-0 shadow-none" placeholder="Zoek in de Plantengids">
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="c-plantengids">
+        <div class="container">
+
+            <div class="c-pg-top-bar d-flex justify-content-between align-items-center mb-5">
+                <div class="c-pg-active-filters d-flex align-items-center flex-wrap gap-2">
+                    <span class="text-muted small me-2">Filters in gebruik:</span>
+
+                    <span class="badge c-pg-filter-badge">
+                        Bomen <i class="bi bi-x-lg ms-2" title="Verwijder filter"></i>
+                    </span>
+                    <span class="badge c-pg-filter-badge">
+                        Fruit <i class="bi bi-x-lg ms-2" title="Verwijder filter"></i>
+                    </span>
+                    <span class="badge c-pg-filter-badge">
+                        Varens <i class="bi bi-x-lg ms-2" title="Verwijder filter"></i>
+                    </span>
+
+                    <button class="btn btn-clear-all ms-3">
+                        <i class="bi bi-trash3 me-1"></i>
+                        Alle filters wissen
+                    </button>
+                </div>
+
+                <div class="c-pg-results-count">
+                    <span class="fw-bold fs-5" id="plant-count">0</span>
+                    <span class="text-muted">plant(en) gevonden</span>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <aside class="col-lg-3 position-relative">
+                    <div class="c-pg-sidebar" id="sidebarScroll">
+                        <div class="c-pg-sidebar__header d-flex justify-content-between align-items-center mb-4">
+                        </div>
+
+                        <div class="accordion c-glass-accordion" id="filterAccordion">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#filterCat">Categorie</button>
+                                </h2>
+                                <div id="filterCat" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="c-filter-search mb-3">
+                                            <i class="bi bi-search"></i>
+                                            <input type="text" class="form-control" placeholder="Zoek categorie..." id="catSearch">
+                                        </div>
+                                        <div class="c-filter-list" id="catList">
+                                            <label class="c-filter-pill">
+                                                <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                <span class="pill-label">Bomen</span>
+                                            </label>
+                                            <label class="c-filter-pill">
+                                                <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                <span class="pill-label">Heesters</span>
+                                            </label>
+                                            <label class="c-filter-pill">
+                                                <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                <span class="pill-label">Haagplanten</span>
+                                            </label>
+                                            <label class="c-filter-pill">
+                                                <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                <span class="pill-label">Confineren</span>
+                                            </label>
+                                            <label class="c-filter-pill">
+                                                <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                <span class="pill-label">Klimplanten</span>
+                                            </label>
+
+                                            <div class="collapse" id="moreCats">
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Fruit</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Rozen</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Varens</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Groenten</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Bamboes</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Kruiden</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Siergrassen</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Vaste planten</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Mediterrane planten</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Bodembedekkers</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Waterplanten</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Bloembollen</span>
+                                                </label>
+                                                <label class="c-filter-pill">
+                                                    <input type="checkbox" class="filter-checkbox" data-group="categorie">
+                                                    <span class="pill-label">Kleinfruit</span>
+                                                </label>
+                                            </div>
+
+                                            <button class="btn btn-link btn-sm p-0 mt-2 text-decoration-none fw-bold btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#moreCats">+ Toon alle categorieën</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterKleur">Bloemkleur</button>
+                                </h2>
+                                <div id="filterKleur" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-color-dots">
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="blauw">
+                                                <div class="color-dot" style="background-color: #0000FF;" title="Blauw"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="bruin">
+                                                <div class="color-dot" style="background-color: #8B4513;" title="Bruin"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="geel">
+                                                <div class="color-dot" style="background-color: #FFFF00;" title="Geel"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="groen">
+                                                <div class="color-dot" style="background-color: #008000;" title="Groen"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="oranje">
+                                                <div class="color-dot" style="background-color: #FFA500;" title="Oranje"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="paars">
+                                                <div class="color-dot" style="background-color: #800080;" title="Paars"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="rood">
+                                                <div class="color-dot" style="background-color: #FF0000;" title="Rood"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="roze">
+                                                <div class="color-dot" style="background-color: #FFC0CB;" title="Roze"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="wit">
+                                                <div class="color-dot" style="background-color: #FFFFFF; border: 1px solid #dee2e6 !important;" title="Wit"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="zwart">
+                                                <div class="color-dot" style="background-color: #000000;" title="Zwart"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bladeren" data-filter="bont">
+                                                <div class="color-dot color-dot--bont" title="Bont"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterPeriode">Bloeiperiode</button>
+                                </h2>
+                                <div id="filterPeriode" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="row g-2">
+                                            <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Januari</span></label></div>
+                                            <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Februari</span></label></div>
+                                            <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Maart</span></label></div>
+                                            <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">April</span></label></div>
+                                            <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Mei</span></label></div>
+                                            <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Juni</span></label></div>
+                                            <div class="collapse row g-2 m-0 p-0" id="moreMonths">
+                                                <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Juli</span></label></div>
+                                                <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Augustus</span></label></div>
+                                                <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">September</span></label></div>
+                                                <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">Oktober</span></label></div>
+                                                <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">November</span></label></div>
+                                                <div class="col-6"><label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="bloeiperiode"><span class="pill-label text-center">December</span></label></div>
+                                            </div>
+                                            <button class="btn btn-link btn-sm p-0 mt-2 text-decoration-none fw-bold btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#moreMonths">+ Toon alle maanden</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterHoogte">Hoogte</button>
+                                </h2>
+                                <div id="filterHoogte" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-filter-list">
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">&lt; 10 cm</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">10-20 cm</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">20-50 cm</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">50-100 cm</span></label>
+                                            <div class="collapse" id="moreHeights">
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">100-150 cm</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">150-200 cm</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">2-3m</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">3-5m</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">5-10m</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="hoogte"><span class="pill-label">&gt; 10m</span></label>
+                                            </div>
+                                            <button class="btn btn-link btn-sm p-0 mt-2 text-decoration-none fw-bold btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#moreHeights">+ Toon meer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterStand">Standplaats</button>
+                                </h2>
+                                <div id="filterStand" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-filter-list">
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="standplaats"><span class="pill-label">Zon</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="standplaats"><span class="pill-label">Halfschaduw</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="standplaats"><span class="pill-label">Schaduw</span></label>
+                                            <div class="collapse" id="moreStand">
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="standplaats"><span class="pill-label">Schaduw + zon</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="standplaats"><span class="pill-label">Halfschaduw, schaduw</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="standplaats"><span class="pill-label">Halfschaduw, zon</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="standplaats"><span class="pill-label">Halfschaduw+schaduw+zon</span></label>
+                                            </div>
+                                            <button class="btn btn-link btn-sm p-0 mt-2 text-decoration-none fw-bold btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#moreStand">+ Toon meer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterToepassing">Toepassing & Gebruik</button>
+                                </h2>
+                                <div id="filterToepassing" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-filter-list">
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Laanboom</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Stadstuin</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Rotstuin</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Kust</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Solitair</span></label>
+                                            <div class="collapse" id="moreToepassing">
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Kuipplant</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Park</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Openbaar groen</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Onderhoudsarm</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Schaduwplant</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Border</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Prairietuin</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Vijver</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Informele tuin</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Cottage tuin</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Bloemschikken</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Kruidentuin</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="toepassing"><span class="pill-label">Pergola</span></label>
+                                            </div>
+                                            <button class="btn btn-link btn-sm p-0 mt-2 text-decoration-none fw-bold btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#moreToepassing">+ Toon meer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterGrond">Grondsoort</button>
+                                </h2>
+                                <div id="filterGrond" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-filter-list">
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Alle</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Neutraal, alle</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Kalk</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Leem</span></label>
+                                            <div class="collapse" id="moreGrond">
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Klei</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Zuur</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Vochtig</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="grondsoort"><span class="pill-label">Droog</span></label>
+                                            </div>
+                                            <button class="btn btn-link btn-sm p-0 mt-2 text-decoration-none fw-bold btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#moreGrond">+ Toon meer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterVorm">Vorm</button>
+                                </h2>
+                                <div id="filterVorm" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-filter-list">
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Opgaand</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Zuil</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Kegel</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Treur</span></label>
+                                            <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Rond</span></label>
+                                            <div class="collapse" id="moreVorm">
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Kegel+opgaand</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Kegel+opgaand+zuil</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Kegel+rond</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Kegel+rond+zuil</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Kegel+zuil</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Opgaand+rond</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Opgaand+rond+zuil</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Opgaand+treur</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Opgaand+zuil</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Rond+treur</span></label>
+                                                <label class="c-filter-pill"><input type="checkbox" class="filter-checkbox" data-group="vorm"><span class="pill-label">Treur+zuil</span></label>
+                                            </div>
+                                            <button class="btn btn-link btn-sm p-0 mt-2 text-decoration-none fw-bold btn-show-more" type="button" data-bs-toggle="collapse" data-bs-target="#moreVorm">+ Toon meer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterBlad">Bladkleur</button>
+                                </h2>
+                                <div id="filterBlad" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-color-dots">
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="blauw">
+                                                <div class="color-dot" style="background-color: #0000FF;" title="Blauw"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="bruin">
+                                                <div class="color-dot" style="background-color: #8B4513;" title="Bruin"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="geel">
+                                                <div class="color-dot" style="background-color: #FFFF00;" title="Geel"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="groen">
+                                                <div class="color-dot" style="background-color: #008000;" title="Groen"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="oranje">
+                                                <div class="color-dot" style="background-color: #FFA500;" title="Oranje"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="paars">
+                                                <div class="color-dot" style="background-color: #800080;" title="Paars"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="rood">
+                                                <div class="color-dot" style="background-color: #FF0000;" title="Rood"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="roze">
+                                                <div class="color-dot" style="background-color: #FFC0CB;" title="Roze"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="wit">
+                                                <div class="color-dot" style="background-color: #FFFFFF; border: 1px solid #dee2e6 !important;" title="Wit"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bloemkleur" data-filter="zwart">
+                                                <div class="color-dot" style="background-color: #000000;" title="Zwart"></div>
+                                            </label>
+
+                                            <label class="c-color-filter">
+                                                <input type="checkbox" class="filter-checkbox d-none" data-group="bladeren" data-filter="bont">
+                                                <div class="color-dot color-dot--bont" title="Bont"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filterCompact">Extra Kenmerken</button>
+                                </h2>
+                                <div id="filterCompact" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="c-filter-grid-switches">
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="wintergroen" data-filter="ja"><span class="pill-label">Wintergroen</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="luchtverontreiniging" data-filter="ja"><span class="pill-label">Luchtverontr.</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="herfstverkleuring" data-filter="ja"><span class="pill-label">Herfstverkl.</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="vlinders" data-filter="ja"><span class="pill-label">Vlinders</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="snijbloem" data-filter="ja"><span class="pill-label">Snijbloem</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="bijen" data-filter="ja"><span class="pill-label">Bijen/Insecten</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="voedselbos" data-filter="ja"><span class="pill-label">Voedselbos</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="droogresistent" data-filter="ja"><span class="pill-label">Droogresist.</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="klimaatrobuust" data-filter="ja"><span class="pill-label">Klimaatrobuust</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="anti-slak" data-filter="ja"><span class="pill-label">Anti-slak</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="vogels" data-filter="ja"><span class="pill-label">Vogels</span></label>
+                                            <label class="c-filter-pill small-pill"><input type="checkbox" class="filter-checkbox" data-group="inheems" data-filter="ja"><span class="pill-label">Inheems</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-sidebar-scroll-indicator" id="scrollIndicator">
+                        <span>Meer filters</span>
+                        <i class="bi bi-chevron-double-down"></i>
+                    </div>
+                </aside>
+
+                <main class="col-lg-9">
+                    <div class="row g-4" id="plantGrid">
+
+                    </div>
+
+                    <div class="text-center mt-5 pt-4">
+                        <button class="btn c-btn-primary btn-lg px-5 rounded-pill d-none" id="loadMoreBtn">
+                            Bekijk meer planten
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lottie Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</body>
+<footer class="c-footer" id="footer">
+    <div class="container">
+        <div class="row align-items-stretch">
+
+            <!-- Linker kolom: Adressen -->
+            <div class="col-lg-3 c-footer__col">
+                <div class="c-footer__address">
+                    <p>HAZEGOEDWEG 5<br>8800 Roeselare (BE)</p>
+                    <p>Email: <a href="mailto:Info@willaert.be">Info@willaert.be</a></p>
+                </div>
+                <div class="c-footer__address mt-4">
+                    <p>INDUSTRIEWEG NOORD 1173<br>3660 OUDSBERGEN (BE)</p>
+                    <p>Email: <a href="mailto:Oudsbergen@willaert.be">Oudsbergen@willaert.be</a></p>
+                </div>
+            </div>
+
+            <!-- Middelste kolom: Socials & Info -->
+            <div class="col-lg-6 c-footer__col c-footer__col--center">
+                <h3 class="c-footer__title">Willaert Boomkwekerij</h3>
+                <p class="c-footer__intro">
+                    Volg ons op sociale media voor dagelijkse inspiratie, de nieuwste leveringen en een blik achter de schermen bij de grootste plantenmarkt van België.
+                </p>
+                <p class="c-footer__tel">Tel: <a href="tel:+32051241344">+32(0)51/24 13 44</a></p>
+
+                <div class="c-footer__socials">
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Rechter kolom: Pagina's -->
+            <div class="col-lg-3 c-footer__col">
+                <h3 class="c-footer__title">Pagina's</h3>
+                <ul class="c-footer__links">
+                    <li><a href="#">Onze expertise</a></li>
+                    <li><a href="#">Inspiratie</a></li>
+                    <li><a href="#">Plantengids</a></li>
+                    <li><a href="#">Webshop</a></li>
+                    <li><a href="#">Praktisch</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Copyright gedeelte -->
+        <div class="c-footer__bottom">
+            <p>Geen particuliere verkoop - groothandel voor professionelen in de groensector</p>
+            <p>Copyright Willaert NV - Deze website maakt gebruikt van cookies</p>
+        </div>
+    </div>
+</footer>
+
+</html>
