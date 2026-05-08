@@ -223,20 +223,18 @@
 // ==========================================================================
 
 .c-btn-primary {
-  background-color: #4E9D3A;
+  background-color: $green !important;
   color: $white;
   font-family: $font-heading;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 10px;
   padding: 15px 40px;
   border: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(78, 157, 58, 0.2);
 
-  &:hover:not(:disabled) {
-    background-color: darken(#4E9D3A, 8%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(78, 157, 58, 0.3);
+  &:hover{
+    background-color: $Blue !important;
     color: $white;
   }
 

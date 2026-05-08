@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- SELECTOREN & VARIABELEN ---
     let allePlanten = [];
     let huidigeGefilterdeLijst = []; 
-    let zichtbarePlantenCount = 9; // De limiet van 9 planten
+    let zichtbarePlantenCount = 9;
 
     const plantGrid = document.getElementById('plantGrid');
     const checkboxes = document.querySelectorAll('.filter-checkbox');
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const indicator = document.getElementById('scrollIndicator');
     const activeFiltersContainer = document.querySelector('.c-pg-active-filters');
 
-    // --- 1. DATA INLADEN (JSON) ---
     fetch('./json/planten.json')
         .then(response => {
             if (!response.ok) throw new Error("JSON bestand niet gevonden");
@@ -25,20 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             allePlanten = data;
-            updateFilters(); // Eerste render
+            updateFilters();
         })
         .catch(error => {
             console.error('Fout bij laden JSON:', error);
             if(plantGrid) plantGrid.innerHTML = '<p class="text-danger">Kon de planten niet laden.</p>';
         });
 
-    // --- 2. PLANTEN RENDERING FUNCTIE ---
     function renderPlanten(plantenLijst) {
         if (!plantGrid) return;
         plantGrid.innerHTML = ''; 
-        huidigeGefilterdeLijst = plantenLijst; // Sla op voor de 'Bekijk meer' knop
+        huidigeGefilterdeLijst = plantenLijst;
 
-        // Update de dynamische teller
         if (countElement) {
             countElement.innerText = plantenLijst.length;
         }
@@ -49,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Toon maximum het aantal van de huidige limiet (9, 18, etc.)
         const teTonenPlanten = plantenLijst.slice(0, zichtbarePlantenCount);
 
         teTonenPlanten.forEach(plant => {
@@ -70,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
             plantGrid.insertAdjacentHTML('beforeend', card);
         });
 
-        // Toon de knop alleen als er nog meer planten in de lijst zitten dan we nu tonen
         if (loadMoreBtn) {
             if (plantenLijst.length > zichtbarePlantenCount) {
                 loadMoreBtn.classList.remove('d-none');
@@ -80,9 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // --- 3. FILTER LOGICA ---
     function updateFilters() {
-        zichtbarePlantenCount = 9; // Reset de limiet naar 9 bij elke nieuwe filteractie
+        zichtbarePlantenCount = 9;
         
         const filters = {};
         const activeBadges = [];
@@ -102,13 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         const gefilterdeLijst = allePlanten.filter(plant => {
-            // Zoekterm check (Header)
             const matchesSearch = plant.naam.toLowerCase().includes(searchTerm) || 
                                   plant.genus.toLowerCase().includes(searchTerm);
 
             if (!matchesSearch) return false;
 
-            // Checkbox filters check
             return Object.keys(filters).every(group => {
                 const geselecteerdeWaardes = filters[group];
                 const plantData = plant[group];
@@ -128,15 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
         renderBadges(activeBadges);
     }
 
-    // --- 4. BEKIJK MEER KNOP LOGICA ---
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function() {
-            zichtbarePlantenCount += 9; // Verhoog limiet met 9
-            renderPlanten(huidigeGefilterdeLijst); // Render opnieuw met de opgeslagen gefilterde lijst
+            zichtbarePlantenCount += 9;
+            renderPlanten(huidigeGefilterdeLijst);
         });
     }
 
-    // --- 5. BADGE LOGICA ---
     function renderBadges(activeBadges) {
         if (!activeFiltersContainer) return;
         const oldBadges = activeFiltersContainer.querySelectorAll('.c-pg-filter-badge');
@@ -162,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 6. EVENT LISTENERS (Zoeken & Filters) ---
     if (headerSearch) {
         headerSearch.addEventListener('input', updateFilters);
     }
@@ -208,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 7. OVERIGE LOGICA (Collapse & Scroll) ---
     const collapseElements = document.querySelectorAll('.collapse');
     collapseElements.forEach(collapse => {
         const btn = document.querySelector(`[data-bs-target="#${collapse.id}"]`);
