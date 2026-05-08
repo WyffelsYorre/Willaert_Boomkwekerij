@@ -44,7 +44,7 @@ html, body {
 
         &__text {
             font-family: $font-primary;
-            font-size: 16px;
+            font-size: $text;
             color: $black;
             line-height: 1.4;
             max-width: 210px;
@@ -556,6 +556,9 @@ html, body {
         margin-bottom: 15px;
         line-height: 1.2;
         color: $white;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
 
         @media (max-width: 767.98px) {
             font-size: 28px;
@@ -569,6 +572,9 @@ html, body {
         margin-bottom: 30px;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.9);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
 
     &__interests {
@@ -635,7 +641,6 @@ html, body {
         }
     }
 
-    // Wrapper voor input + error bericht
     &__input-wrapper {
         width: 100%;
         max-width: 650px;
@@ -659,7 +664,7 @@ html, body {
         min-width: 0; 
         height: 52px;
         border-radius: 6px;
-        border: 2px solid transparent; // Border gereserveerd voor focus/error
+        border: 2px solid transparent;
         padding: 0 20px;
         font-family: $font-primary;
         font-size: 16px;
@@ -667,14 +672,12 @@ html, body {
         color: $black;
         transition: all 0.3s ease;
 
-        // Groene active state
         &:focus {
             outline: none;
             border-color: $green;
             box-shadow: 0 0 0 4px rgba($green, 0.2);
         }
 
-        // Error state
         &.is-invalid {
             border-color: #ff4d4d;
             &:focus {
@@ -730,7 +733,6 @@ html, body {
         }
     }
 
-    // Container voor de Lottie animatie na succes
     #lottieContainer {
         margin: 0 auto 20px;
         display: flex;

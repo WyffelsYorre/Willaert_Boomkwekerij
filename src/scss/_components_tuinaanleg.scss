@@ -10,21 +10,19 @@
     font-family: $font-heading;
     font-size: $h2;
     color: $green;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
+    margin-bottom: 0.5rem;
   }
 
   &__intro {
     font-family: $font-primary;
-    font-size: 19px;
-    font-weight: 700;
+    font-size: $text;
     color: $black;
     margin-bottom: 2rem;
   }
 
   &__body {
     font-family: $font-primary;
-    font-size: 15px;
+    font-size: $text;
     line-height: 1.6;
     color: $black;
 
@@ -32,7 +30,7 @@
       color: $black;
       display: inline-block;
       margin-bottom: 5px;
-      font-size: 17px;
+      font-size: $bigtext;
     }
 
     p {
@@ -69,7 +67,7 @@
   p {
     color: $black;
     font-family: $font-heading;
-    font-size: 15px;
+    font-size: $text;
   }
 
   ul li {
@@ -81,27 +79,11 @@
     a {
       color: $Blue !important;
       text-decoration: none;
-      font-size: 15px;
+      font-size: $text;
       &:hover {
         text-decoration: underline;
       }
     }
-  }
-}
-
-.c-btn-primary {
-  background-color: $Blue;
-  color: $white !important;
-  padding: 12px 25px;
-  border-radius: 4px;
-  font-family: $font-primary;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  transition: none !important;
-
-  &:hover {
-    background-color: darken($Blue, 10%);
   }
 }
 
@@ -111,9 +93,7 @@
     overflow: hidden;
     width: 100%;
     position: relative;
-    display: block; // Zichtbaar op desktop
-
-    // --- NIEUW: Verberg de volledige sectie op 991px of kleiner ---
+    display: block;
     @media (max-width: 992px) {
         display: none !important;
     }
@@ -129,7 +109,7 @@
 
     &__item {
         flex: 0 0 320px; 
-        opacity: 0.3;
+        opacity: 0.5;
         transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         cursor: pointer;
 
@@ -151,20 +131,18 @@
             }
         }
 
-        // Hover effect voor zij-afbeeldingen
         &:not(.is-active):hover {
-            opacity: 0.7;
+            opacity: 0.8;
             
             img {
                 transform: scale(1.05);
-                transition: transform 0.2s ease-in-out; // Trage groei zoals gevraagd
+                transition: transform 0.2s ease-in-out;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
         }
     }
 }
 
-/* Mobiele optimalisatie */
 @media (max-width: 991px) {
     .c-carousel-section {
         padding: $padding-short 0;
@@ -173,7 +151,7 @@
             flex: 0 0 250px;
             
             &.is-active {
-                flex: 0 0 90%; // Neemt bijna hele breedte in op mobiel
+                flex: 0 0 90%;
                 img {
                     height: 350px;
                 }
