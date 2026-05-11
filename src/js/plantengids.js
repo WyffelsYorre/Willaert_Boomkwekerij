@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const plantGrid = document.getElementById('plantGrid');
     const checkboxes = document.querySelectorAll('.filter-checkbox');
-    const clearAllBtn = document.querySelector('.btn-clear-all');
+    const clearAllBtn = document.querySelector('.c-btn-clear-all');
     const catSearchInput = document.getElementById('catSearch');
     const headerSearch = document.getElementById('headerSearch');
     const heroSearchForm = document.getElementById('heroSearchForm');
@@ -48,19 +48,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const teTonenPlanten = plantenLijst.slice(0, zichtbarePlantenCount);
 
         teTonenPlanten.forEach(plant => {
+            // We voegen hier de <a> tag toe rond de kaart met het ID van de plant
             const card = `
-                <div class="col-md-4">
-                    <div class="c-plant-card">
-                        <div class="c-plant-card__wrapper">
-                            <img src="${plant.afbeelding}" alt="${plant.naam}" class="c-plant-card__img">
-                            <div class="c-plant-card__overlay">
-                                <div class="c-plant-card__info">
-                                    <h3 class="c-plant-card__title">${plant.naam}</h3>
-                                    <p class="c-plant-card__genus text-uppercase">${plant.genus}</p>
+                <div class="col-md-4 mb-4">
+                    <a href="plantengidsdetail.html?id=${plant.id}" class="text-decoration-none text-dark c-plant-card__link">
+                        <div class="c-plant-card">
+                            <div class="c-plant-card__wrapper">
+                                <img src="${plant.afbeelding}" alt="${plant.naam}" class="c-plant-card__img">
+                                <div class="c-plant-card__overlay">
+                                    <div class="c-plant-card__info">
+                                        <h3 class="c-plant-card__title">${plant.naam}</h3>
+                                        <p class="c-plant-card__genus text-uppercase">${plant.genus}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>`;
             plantGrid.insertAdjacentHTML('beforeend', card);
         });
