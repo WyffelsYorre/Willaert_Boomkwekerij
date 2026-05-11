@@ -2,6 +2,8 @@
   {
     "id": 1,
     "naam": "Abelia grandiflora 'Tricolor Charm'",
+    "status": "in stock",
+    "potmaat": "25-30 C",
     "genus": "Abelia",
     "categorie": "heesters",
     "bloemkleur": "roze",
@@ -16,11 +18,18 @@
     "vlinders": "ja",
     "bijen": "ja",
     "herfstverkleuring": "ja",
-    "afbeelding": "./img/plant1.jpg"
+    "afbeelding": "./img/plant1.jpg",
+    "beschrijving": "De Abelia 'Tricolor Charm' is een elegante, half-wintergroene struik die bekend staat om zijn uitzonderlijk lange bloeiperiode en sierlijke, overhangende groeiwijze. De bonte bladeren verkleuren prachtig gedurende de seizoenen.",
+    "reviews": [
+      { "user": "GroenVingertje", "rating": 5, "comment": "Prachtige kleuren in de herfst, echt een aanrader voor de border." },
+      { "user": "Jan Tuinman", "rating": 4, "comment": "Groeit gestaag en de bijen zijn er dol op." }
+    ]
   },
   {
     "id": 2,
     "naam": "Echinacea purpurea 'Magnus'",
+    "status": "in stock",
+    "potmaat": "25-35 C",
     "genus": "Echinacea",
     "categorie": "vaste planten",
     "bloemkleur": "paars",
@@ -34,11 +43,17 @@
     "bladeren": "groen blad",
     "vlinders": "ja",
     "bijen": "ja",
-    "afbeelding": "./img/plant2.jpg"
+    "afbeelding": "./img/plant2.jpg",
+    "beschrijving": "De Rode Zonnehoed 'Magnus' is een klassieker in de border. De grote paarse bloemen met hun opvallende oranjebruine kegel trekken talloze vlinders en bijen aan van midzomer tot de herfst.",
+    "reviews": [
+      { "user": "Lieve_L", "rating": 5, "comment": "Blijft elk jaar trouw terugkomen. Sterke plant!" }
+    ]
   },
   {
     "id": 3,
     "naam": "Pennisetum alopecuroides 'Hameln'",
+    "status": "out of stock",
+    "potmaat": "10-20 C",
     "genus": "Pennisetum",
     "categorie": "siergrassen",
     "bloemkleur": "bruin",
@@ -51,11 +66,17 @@
     "vorm": "rond",
     "bladeren": "groen blad",
     "herfstverkleuring": "ja",
-    "afbeelding": "./img/plant3.jpg"
+    "afbeelding": "./img/plant3.jpg",
+    "beschrijving": "Dit Lampepoetsergras vormt compacte polletjes van smal groen blad. In de nazomer verschijnen de karakteristieke zachte, borstelige bloemaren die tot diep in de winter decoratief blijven.",
+    "reviews": [
+      { "user": "SiergrasFan", "rating": 4, "comment": "Mooie wuivende pluimen, geeft structuur aan de wintertuin." }
+    ]
   },
   {
     "id": 4,
     "naam": "Acer palmatum 'Atropurpureum'",
+    "status": "in stock",
+    "potmaat": "25-30 C",
     "genus": "Acer",
     "categorie": "bomen",
     "bloemkleur": "rood",
@@ -68,11 +89,17 @@
     "vorm": "rond",
     "bladeren": "paars",
     "herfstverkleuring": "ja",
-    "afbeelding": "./img/plant4.jpg"
+    "afbeelding": "./img/plant4.jpg",
+    "beschrijving": "De Japanse Esdoorn 'Atropurpureum' is een traaggroeiende struik of kleine boom. Zijn diep ingesneden, donkerrode bladeren zijn een blikvanger in elke tuin, vooral bij laagstaande zon.",
+    "reviews": [
+      { "user": "Architect_Kevin", "rating": 5, "comment": "De perfecte solitair voor een moderne stadstuin." }
+    ]
   },
   {
     "id": 5,
     "naam": "Lavandula angustifolia 'Hidcote'",
+    "status": "in stock",
+    "potmaat": "10 C",
     "genus": "Lavandula",
     "categorie": "vaste planten",
     "bloemkleur": "paars",
@@ -86,11 +113,18 @@
     "bladeren": "grijs",
     "vlinders": "ja",
     "bijen": "ja",
-    "afbeelding": "./img/plant5.jpg"
+    "afbeelding": "./img/plant5.jpg",
+    "beschrijving": "De 'Hidcote' is de bekendste lavendelsoort. Hij blijft compacter dan andere soorten en bloeit met intens dieppaarse bloemen. De geur is heerlijk en de bladeren blijven in de winter zilverachtig grijs.",
+    "reviews": [
+      { "user": "ProvenceLover", "rating": 5, "comment": "Heerlijke geur, ik waan me direct in Frankrijk." },
+      { "user": "BijenVriend", "rating": 5, "comment": "Geen enkele plant in mijn tuin trekt meer bijen aan." }
+    ]
   },
   {
     "id": 6,
     "naam": "Hydrangea paniculata 'Limelight'",
+    "status": "in stock",
+    "potmaat": "45 C",
     "genus": "Hydrangea",
     "categorie": "heesters",
     "bloemkleur": "wit",
@@ -102,11 +136,17 @@
     "grondsoort": "vochtig",
     "vorm": "opgaand",
     "bladeren": "groen blad",
-    "afbeelding": "./img/plant6.jpg"
+    "afbeelding": "./img/plant6.jpg",
+    "beschrijving": "De Pluimhortensia 'Limelight' staat bekend om zijn sterke takken en enorme bloempluimen. De bloemen beginnen limoengroen en verkleuren langzaam naar roomwit en uiteindelijk zachtroze in de herfst.",
+    "reviews": [
+      { "user": "Bloem_M", "rating": 4, "comment": "Heel sterk, ook na een flinke regenbui blijven de pluimen rechtop staan." }
+    ]
   },
   {
     "id": 7,
     "naam": "Fagus sylvatica 'Atropunicea'",
+    "status": "out of stock",
+    "potmaat": "30-40 C",
     "genus": "Fagus",
     "categorie": "haagplanten",
     "bloemkleur": "groen",
@@ -118,11 +158,15 @@
     "grondsoort": "leem",
     "vorm": "opgaand",
     "bladeren": "paars",
-    "afbeelding": "./img/plant7.jpg"
+    "afbeelding": "./img/plant7.jpg",
+    "beschrijving": "De Rode Beuk is een majestueuze boom die ook uitstekend als haag gebruikt kan worden. Het donkerrode blad behoudt zijn kleur de hele zomer en wordt in de winter dor maar blijft vaak aan de plant zitten voor privacy.",
+    "reviews": []
   },
   {
     "id": 8,
     "naam": "Salvia nemorosa 'Caradonna'",
+    "status": "in stock",
+    "potmaat": "15-30 C",
     "genus": "Salvia",
     "categorie": "vaste planten",
     "bloemkleur": "paars",
@@ -136,27 +180,39 @@
     "bladeren": "groen blad",
     "vlinders": "ja",
     "bijen": "ja",
-    "afbeelding": "./img/plant8.jpg"
+    "afbeelding": "./img/plant8.jpg",
+    "beschrijving": "Salvia 'Caradonna' valt op door zijn zeer donkere, bijna zwarte bloemstengels. De dieppaarse bloemaren staan kaarsrecht omhoog en bloeien wekenlang door.",
+    "reviews": [
+      { "user": "GardenDesign", "rating": 5, "comment": "Combineert fantastisch met grassen en gele bloemen." }
+    ]
   },
   {
     "id": 9,
     "naam": "Prunus laurocerasus 'Novita'",
+    "status": "in stock",
+    "potmaat": "10-20 C",
     "genus": "Prunus",
     "categorie": "haagplanten",
     "bloemkleur": "wit",
     "bloeiperiode": ["mei"],
     "hoogte": "3-5m",
     "standplaats": "halfschaduw, schaduw",
-    "wintergroen": "ja",
+    "wintergreen": "ja",
     "toepassing": ["onderhoudsarm", "openbaar groen"],
     "grondsoort": "klei",
     "vorm": "opgaand",
     "bladeren": "groen blad",
-    "afbeelding": "./img/plant9.jpg"
+    "afbeelding": "./img/plant9.jpg",
+    "beschrijving": "De Laurierkers 'Novita' is een verbeterde versie van de 'Rotundifolia'. Hij is sterker, gezonder en groeit zeer snel dicht, waardoor hij ideaal is voor een bladhoudende privacyhaag.",
+    "reviews": [
+      { "user": "An_Privacy", "rating": 4, "comment": "Binnen 2 jaar een volledig dichte haag. Erg tevreden." }
+    ]
   },
   {
     "id": 10,
     "naam": "Betula utilis 'Doorenbos'",
+    "status": "in stock",
+    "potmaat": "25-30 C",
     "genus": "Betula",
     "categorie": "bomen",
     "bloemkleur": "geel",
@@ -169,11 +225,15 @@
     "vorm": "opgaand",
     "bladeren": "groen blad",
     "herfstverkleuring": "ja",
-    "afbeelding": "./img/plant10.jpg"
+    "afbeelding": "./img/plant10.jpg",
+    "beschrijving": "De Himalayaberk 'Doorenbos' is geliefd om zijn extreem witte bast die op latere leeftijd prachtig afbladdert. In de winter vormt de witte bast een schitterend contrast met de rest van de tuin.",
+    "reviews": []
   },
   {
     "id": 11,
     "naam": "Clematis 'The President'",
+    "status": "out of stock",
+    "potmaat": "5 C",
     "genus": "Clematis",
     "categorie": "klimplanten",
     "bloemkleur": "blauw",
@@ -186,11 +246,17 @@
     "vorm": "opgaand",
     "bladeren": "groen blad",
     "bijen": "ja",
-    "afbeelding": "./img/plant11.jpg"
+    "afbeelding": "./img/plant11.jpg",
+    "beschrijving": "Een krachtige klimmer met grote, stervormige diepblauwe bloemen. 'The President' bloeit twee keer per jaar: een rijke bloei in de vroege zomer en een tweede bloei in de nazomer.",
+    "reviews": [
+      { "user": "Verticaal_Tuinieren", "rating": 5, "comment": "Prachtige grote bloemen. Doet het goed tegen mijn schutting." }
+    ]
   },
   {
     "id": 12,
     "naam": "Helleborus orientalis",
+    "status": "in stock",
+    "potmaat": "25-40 C",
     "genus": "Helleborus",
     "categorie": "vaste planten",
     "bloemkleur": "wit",
@@ -203,11 +269,15 @@
     "vorm": "rond",
     "bladeren": "groen blad",
     "bijen": "ja",
-    "afbeelding": "./img/plant12.jpg"
+    "afbeelding": "./img/plant12.jpg",
+    "beschrijving": "De Kerstroos of Nieskruid brengt kleur in de tuin wanneer de meeste planten in rust zijn. De knnikkende witte bloemen verschijnen in hartje winter en zijn een belangrijke voedselbron voor vroege bijen.",
+    "reviews": []
   },
   {
     "id": 13,
     "naam": "Rosa 'Incredible'",
+    "status": "out of stock",
+    "potmaat": "25-30 C",
     "genus": "Rosa",
     "categorie": "rozen",
     "bloemkleur": "geel",
@@ -220,11 +290,15 @@
     "vorm": "opgaand",
     "bladeren": "groen blad",
     "bijen": "ja",
-    "afbeelding": "./img/plant13.jpg"
+    "afbeelding": "./img/plant13.jpg",
+    "beschrijving": "Een herbloeiende heesterroos met een opvallende gele kleur die niet vervaagt in de zon. Zeer ziekteresistent en onderhoudsvriendelijk.",
+    "reviews": []
   },
   {
     "id": 14,
     "naam": "Buxus sempervirens",
+    "status": "in stock",
+    "potmaat": "25-30 C",
     "genus": "Buxus",
     "categorie": "haagplanten",
     "bloemkleur": "geel",
@@ -236,11 +310,17 @@
     "grondsoort": "kalk",
     "vorm": "rond",
     "bladeren": "groen blad",
-    "afbeelding": "./img/plant14.jpg"
+    "afbeelding": "./img/plant14.jpg",
+    "beschrijving": "De klassieke Buxus is de basis voor elke strakke tuin. Ideaal voor vormsnoei of als laag haagje. Hij verdraagt schaduw zeer goed en blijft het hele jaar door groen.",
+    "reviews": [
+      { "user": "Retro_Tuin", "rating": 3, "comment": "Altijd mooi, maar let op de buxusmot!" }
+    ]
   },
   {
     "id": 15,
     "naam": "Fragaria vesca",
+    "status": "in stock",
+    "potmaat": "25-30 C",
     "genus": "Fragaria",
     "categorie": "fruit",
     "bloemkleur": "wit",
@@ -254,6 +334,10 @@
     "bladeren": "groen blad",
     "vogels": "ja",
     "inheems": "ja",
-    "afbeelding": "./img/plant15.jpg"
+    "afbeelding": "./img/plant15.jpg",
+    "beschrijving": "De bosaardbei is een charmante inheemse bodembedekker. De kleine witte bloemetjes worden gevolgd door piepkleine, maar zeer smaakvolle en aromatische rode aardbeien.",
+    "reviews": [
+      { "user": "EcoKees", "rating": 5, "comment": "Groeit overal en de kinderen vinden de besjes heerlijk." }
+    ]
   }
 ]

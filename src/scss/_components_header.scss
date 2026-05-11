@@ -125,13 +125,17 @@ body,
         margin-bottom: -40px;
         letter-spacing: 2px;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1500px) {
+            font-size: 130px;
+        }
+
+        @media (max-width: 836px) {
             font-size: 60px;
         }
     }
 
     .c-hero-search-box {
-        background: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         padding: 30px 40px;
@@ -145,6 +149,12 @@ body,
             font-family: $font-heading;
             font-size: 24px;
             margin-bottom: 20px;
+
+            @media (max-width: 836px) {
+                font-size: 16px;
+               
+            }
+            
         }
     }
 
