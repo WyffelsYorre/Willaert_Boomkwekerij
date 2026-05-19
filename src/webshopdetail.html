@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willaert Boomkwekerij</title>
+    <title>Webshop Detail | Willaert Boomkwekerij</title>
     <link rel="icon" type="image/png" href="./img/willaert-logo-color.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
     <script type="module" src="./js/main.js"></script>
 </head>
 
-<body>
+<body class="c-webshop-page">
     <header class="c-nav-white">
         <div class="c-nav-white__top-bar">
             <div class="dropdown">
@@ -93,8 +93,8 @@
                     <a href="index.html" class="breadcrumb-item is-home">
                         <i class="bi bi-house-door"></i> Home
                     </a>
-                    <a href="plantengids.html" class="breadcrumb-item is-step">
-                        <i class="bi bi-book"></i> Plantengids
+                    <a href="webshop.html" class="breadcrumb-item is-step">
+                        <i class="bi bi-cart"></i> Webshop
                     </a>
                     <div class="breadcrumb-item is-current" id="breadcrumbPlantName">
                         Abelia 'Edward Goucher'
@@ -107,81 +107,98 @@
 
     <main class="c-plant-detail py-5">
         <div class="container">
-
             <div class="row g-5">
+
                 <div class="col-lg-5">
-                    <div class="c-plant-detail__ gallery position-relative h-100">
-                        <div class="c-plant-detail__main-img-wrapper bg-white shadow rounded overflow-hidden">
-
-                            <img src="./img/plant1.jpg" alt="Hoofdafbeelding plant" class="c-plant-detail__main-img" id="plantMainImg">
-
+                    <div class="c-plant-detail__gallery">
+                        <div class="c-plant-detail__main-img-wrapper bg-white shadow rounded overflow-hidden mb-3 position-relative">
+                            <img src="" alt="Laden..." class="c-plant-detail__main-img" id="plantMainImg">
                             <div class="c-plant-detail__actions position-absolute top-0 end-0 p-3">
-                                <button class="c-action-btn mb-2" title="Download PDF"><i class="bi bi-file-pdf"></i></button>
-                                <button class="c-action-btn" title="Print"><i class="bi bi-printer"></i></button>
+                                <button class="c-action-btn mb-2" title="Favoriet"><i class="bi bi-heart"></i></button>
                             </div>
+                        </div>
+
+                        <div id="thumbContainer" class="row g-2">
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-7">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <a href="plantengids.html" class="c-btn-back"><i class="bi bi-arrow-left"></i> Terug naar overzicht</a>
-                        <div class="c-nav-arrows">
-                            <button id="prevPlant" class="arrow-btn"><i class="bi bi-chevron-left"></i></button>
-                            <button id="nextPlant" class="arrow-btn"><i class="bi bi-chevron-right"></i></button>
+                    <div class="mb-3">
+                        <a href="webshop.html" class="c-btn-back"><i class="bi bi-arrow-left"></i> Terug naar webshop</a>
+                    </div>
+
+                    <h1 class="c-plant-detail__title mb-1" id="detailTitle">Laden...</h1>
+
+                    <div class="c-detail-meta d-flex align-items-center gap-3 mb-3">
+                        <h2 class="c-detail-price text-primary fw-bold mb-0">€ --,-- <span class="text-muted small fw-normal ms-1">(per stuk)</span></h2>
+                        <div id="detailReviewStars" class="c-detail-reviews text-warning">
                         </div>
                     </div>
 
-                    <h1 class="c-plant-detail__title" id="detailTitle">Abelia 'Edward Goucher'</h1>
                     <div class="c-plant-detail__stock mb-4">
-                        <span id="stockStatus" class="stock-status"></span> — <span id="potSize" class="pot-size"></span>
+                        <span id="stockStatus" class="badge bg-secondary">Status laden...</span>
+                        <span class="mx-2">—</span>
+                        <span id="potSize" class="text-muted">Potmaat laden...</span>
                     </div>
 
-                    <p class="c-plant-detail__description mb-5" id="detailDesc">
-                        De Abelia 'Edward Goucher' is een elegante, half-wintergroene struik die bekend staat om zijn uitzonderlijk lange bloeiperiode en sierlijke, overhangende groeiwijze.
+                    <p class="c-plant-detail__description mb-4" id="detailDesc">
+                        Bezig met ophalen van productgegevens...
                     </p>
 
-                    <a href="webshop.html" class="c-btn-primary-willaert">Naar de webshop</a>
+                    <div class="c-quick-qty-btns d-flex gap-2 mb-3">
+                        <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3 active" onclick="setQuickQty(1)">1 stuk</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3" onclick="setQuickQty(10)">10 stuks</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3" onclick="setQuickQty(100)">100 stuks</button>
+                    </div>
+
+                    <div class="c-order-actions d-flex align-items-center gap-3 border-top pt-4">
+                        <div class="c-qty-group d-flex align-items-center">
+                            <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                            <input type="number" value="1" class="qty-input" id="detailQty" readonly style="width: 40px; border:none; text-align:center; font-weight: bold;">
+                            <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                        </div>
+                        <button class="c-btn-add-to-cart flex-grow-1" onclick="addToCart(document.getElementById('detailTitle').innerText)">
+                            In winkelmandje <i class="bi bi-cart-plus ms-2"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div class="c-plant-detail__tabs mt-5">
                 <ul class="nav nav-pills justify-content-center mb-5" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-desc-tab" data-bs-toggle="pill" data-bs-target="#pills-desc" type="button" role="tab" aria-controls="pills-desc" aria-selected="false">Beschrijving</button>
+                    <li class="nav-item">
+                        <button class="nav-link active" id="pills-desc-tab" data-bs-toggle="pill" data-bs-target="#pills-desc" type="button">Beschrijving</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-info-tab" data-bs-toggle="pill" data-bs-target="#pills-info" type="button" role="tab" aria-controls="pills-info" aria-selected="true">Extra informatie</button>
+                    <li class="nav-item">
+                        <button class="nav-link" id="pills-info-tab" data-bs-toggle="pill" data-bs-target="#pills-info" type="button">Extra informatie</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-rev-tab" data-bs-toggle="pill" data-bs-target="#pills-rev" type="button" role="tab" aria-controls="pills-rev" aria-selected="false">Reviews</button>
+                    <li class="nav-item">
+                        <button class="nav-link" id="pills-rev-tab" data-bs-toggle="pill" data-bs-target="#pills-rev" type="button">Reviews</button>
                     </li>
                 </ul>
 
                 <div class="tab-content bg-white p-4 rounded" id="pills-tabContent">
-
-                    <div class="tab-pane fade" id="pills-desc" role="tabpanel" aria-labelledby="pills-desc-tab">
-                        <p id="tabFullDesc" class="c-detail-text">Beschrijving wordt geladen...</p>
+                    <div class="tab-pane fade show active" id="pills-desc" role="tabpanel">
+                        <p id="tabDescText" class="c-detail-text">Inhoud laden...</p>
                     </div>
 
-                    <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab">
+                    <div class="tab-pane fade" id="pills-info" role="tabpanel">
                         <div class="c-info-grid">
                             <div class="c-info-grid__col">
                                 <div class="c-info-item"><span>Bloemkleur:</span><strong id="valFlowerColor">-</strong></div>
                                 <div class="c-info-item"><span>Grootte:</span><strong id="valSize">-</strong></div>
-                                <div class="c-info-item"><span>Bloeiperiode:</span><strong id="valPeriod">-</strong></div>
                             </div>
                             <div class="c-info-grid__col">
                                 <div class="c-info-item"><span>Standplaats:</span><strong id="valSun">-</strong></div>
-                                <div class="c-info-item"><span>Grondsoort:</span><strong id="valSoil">-</strong></div>
                                 <div class="c-info-item"><span>Winterhard:</span><strong id="valHardy">-</strong></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="pills-rev" role="tabpanel" aria-labelledby="pills-rev-tab">
-                        <div id="tabReviews">
-                            <p class="text-muted">Reviews worden geladen...</p>
+                    <div class="tab-pane fade" id="pills-rev" role="tabpanel">
+                        <div id="reviewContent">
+                            <p class="text-muted text-center">Nog geen reviews voor dit product.</p>
                         </div>
                     </div>
                 </div>
