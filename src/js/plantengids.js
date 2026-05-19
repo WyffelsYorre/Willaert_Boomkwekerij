@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    if (document.body.classList.contains('c-webshop-page') || document.querySelector('.c-webshop')) {
+        console.log("Plantengids script gestopt: Webshop gedetecteerd.");
+        return; 
+    }
     let allePlanten = [];
     let huidigeGefilterdeLijst = []; 
     let zichtbarePlantenCount = 9;
@@ -48,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const teTonenPlanten = plantenLijst.slice(0, zichtbarePlantenCount);
 
         teTonenPlanten.forEach(plant => {
-            // We voegen hier de <a> tag toe rond de kaart met het ID van de plant
             const card = `
                 <div class="col-md-4 mb-4">
                     <a href="plantengidsdetail.html?id=${plant.id}" class="text-decoration-none text-dark c-plant-card__link">
@@ -216,16 +219,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    if (sidebar && indicator) {
-        const checkScroll = () => {
-            const isAtBottom = sidebar.scrollHeight - sidebar.scrollTop <= sidebar.clientHeight + 15;
-            if (isAtBottom) indicator.classList.add('is-hidden');
-            else indicator.classList.remove('is-hidden');
-        };
-        sidebar.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', () => {
-            if (sidebar.scrollHeight <= sidebar.clientHeight) indicator.style.display = 'none';
-            else checkScroll();
+   if (sidebar && indicator) {
+
+    const allFilters = document.getElementById('allFilters');
+
+    const checkScroll = () => {
+
+        const hasOverflow = sidebar.scrollHeight > sidebar.clientHeight;
+
+        if (!hasOverflow) {
+            indicator.style.display = 'none';
+            return;
+        } else {
+            indicator.style.display = 'flex';
+        }
+
+        const isAtBottom =
+            sidebar.scrollHeight - sidebar.scrollTop <= sidebar.clientHeight + 15;
+
+        if (isAtBottom) {
+            indicator.classList.add('is-hidden');
+        } else {
+            indicator.classList.remove('is-hidden');
+        }
+    };
+
+    sidebar.addEventListener('scroll', checkScroll);
+
+    window.addEventListener('load', checkScroll);
+
+    window.addEventListener('resize', checkScroll);
+
+    if (allFilters) {
+
+        allFilters.addEventListener('shown.bs.collapse', () => {
+            setTimeout(checkScroll, 350);
         });
+
+        allFilters.addEventListener('hidden.bs.collapse', () => {
+            setTimeout(checkScroll, 350);
+        });
+
     }
+}
 });

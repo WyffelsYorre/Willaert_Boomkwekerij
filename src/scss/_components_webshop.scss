@@ -1,0 +1,462 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+#cashCarry {
+  accent-color: $Blue;
+}
+
+.c-detail-price {
+  color: $Blue !important;
+}
+
+.c-webshop {
+  .accordion-item {
+    border: none;
+    margin-bottom: 0;
+
+    .accordion-button {
+      padding: 1.25rem 0 !important;
+      font-size: 15px;
+      font-weight: 700;
+      color: $black;
+
+      &:not(.collapsed) {
+        color: $Blue !important;
+        &::after {
+          filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+        }
+      }
+    }
+  }
+
+  .c-sub-accordion {
+    .accordion-item {
+      border-bottom: 1px solid $pg-border !important;
+
+      &:last-child {
+        border-bottom: none !important;
+      }
+
+      .accordion-button {
+        padding: 1.25rem 0 !important;
+        font-weight: 600;
+        &.py-2 {
+          padding-top: 1.25rem !important;
+          padding-bottom: 1.25rem !important;
+        }
+      }
+    }
+  }
+
+  #masterRubrieken .accordion-body {
+    padding-top: 0;
+  }
+
+  .c-filter-pill {
+    input:checked + .pill-label {
+      background: rgba($Blue, 0.08);
+      color: $Blue;
+      border-color: rgba($Blue, 0.2);
+      font-weight: 600;
+    }
+
+    .pill-label {
+      transition: all 0.2s ease;
+      &:hover {
+        border-color: $Blue;
+        background: #fafafa;
+      }
+    }
+  }
+
+  .c-pg-filter-badge {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+    background-color: rgba($Blue, 0.1);
+    color: $Blue;
+    border: 1px solid rgba($Blue, 0.2);
+
+    &:hover {
+      background-color: rgba($Blue, 0.15);
+    }
+
+    i:hover {
+      color: darken($Blue, 15%);
+    }
+  }
+
+  i.c-webshop-remove {
+    position: relative;
+    z-index: 20;
+    padding: 5px;
+    margin: -5px;
+    pointer-events: auto !important;
+  }
+
+  .btn-show-more {
+    color: $Blue;
+    &:hover {
+      color: darken($Blue, 15%);
+    }
+  }
+
+  .c-sidebar-scroll-indicator {
+    span,
+    i {
+      color: $Blue;
+    }
+  }
+
+  .c-btn-primary {
+    background-color: $Blue !important;
+    border-color: $Blue !important;
+    color: $white !important;
+    border-radius: 50px;
+    padding: 12px 40px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $green !important;
+    }
+  }
+
+  @media (max-width: 992px) {
+    padding-top: 17rem;
+  }
+}
+
+.c-webshop-search-form {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1100px;
+
+  .c-search-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .c-input-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 200px;
+
+      i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $Blue;
+        z-index: 5;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 15px 12px 45px;
+        border-radius: 50px;
+        border: none;
+        font-size: 14px;
+        height: 50px;
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba($Blue, 0.2);
+        }
+      }
+    }
+
+    .c-check-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .c-btn-shop-search {
+      background-color: $Blue;
+      color: $white;
+      border: none;
+      padding: 0 30px;
+      height: 50px;
+      border-radius: 50px;
+      font-family: $font-heading;
+      font-weight: 700;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: darken($Blue, 10%);
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    margin-bottom: 40px;
+
+    .c-search-row {
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+
+      .c-input-wrapper {
+        flex: 1 1 100%;
+        max-width: 500px;
+      }
+
+      .c-check-wrapper {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.c-qty-group {
+  display: flex;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  height: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .qty-btn {
+    width: 26px;
+    border: none;
+    background: transparent;
+    color: $black;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
+
+  .qty-input {
+    width: 35px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.c-btn-cart-add {
+  width: 38px;
+  height: 38px;
+  background-color: $Blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: darken($Blue, 5%);
+  }
+}
+
+.c-filter-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.c-shop-cat-list {
+  .cat-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover,
+    &.active {
+      color: $Blue;
+    }
+  }
+
+  .cat-sub-item {
+    padding: 8px 0 8px 15px;
+    font-size: 13px;
+    color: #666;
+    border-left: 2px solid #eee;
+    &:hover {
+      color: $Blue;
+      border-left-color: $Blue;
+    }
+  }
+}
+
+.c-shop-card {
+  position: relative;
+  overflow: visible;
+
+  &__price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: $glass-bg;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: $glass-blur;
+    border: $glass-border;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-weight: 800;
+    color: $white;
+    font-size: 14px;
+    z-index: 20;
+    display: block;
+  }
+}
+
+.c-plant-card__wrapper {
+  position: relative;
+  z-index: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.c-cat-filter {
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.active {
+    color: $Blue !important;
+    font-weight: 700;
+    background-color: rgba($Blue, 0.05);
+    border-radius: 5px;
+    padding-left: 5px;
+  }
+}
+
+
+.c-order-actions {
+  max-width: 450px;
+  width: 100%;
+
+  .c-qty-group {
+    border: 1px solid #ced4da;
+    border-radius: 50px;
+    padding: 5px 10px;
+    background-color: #fff;
+    height: 50px;
+
+    .qty-btn {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: #6c757d;
+      padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: $Blue;
+      }
+    }
+  }
+
+  .c-btn-add-to-cart {
+    background-color: $Blue;
+    color: white;
+    border: none;
+    height: 50px;
+    padding: 0 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background-color: rgba($Blue, 0.95);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  @media (max-width: 370px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    .c-btn-add-to-cart {
+      order: 1;
+      width: 100%;
+    }
+
+    .c-qty-group {
+      order: 2;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+
+.c-quick-qty-btns {
+    button {
+        font-weight: 600;
+        font-size: 13px;
+        border-color: #ced4da;
+        color: #495057;
+        transition: all 0.2s ease;
+
+        &:hover, &.active {
+            background-color: $Blue !important;
+            border-color: $Blue !important;
+            color: white !important;
+        }
+    }
+}
+
+.c-detail-meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 15px;
+
+    @media (max-width: 378px) {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 4px;
+    }
+}

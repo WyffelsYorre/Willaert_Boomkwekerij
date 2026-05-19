@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webshop | Willaert Boomkwekerij</title>
+    <link rel="icon" type="image/png" href="./img/willaert-logo-color.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body class="c-webshop-page">
+    <header class="c-header3">
+        <div class="c-top-bar">
+            <div class="dropdown">
+                <div class="c-opening-badge" id="openingHoursTrigger" data-bs-toggle="dropdown">
+                    <span>Vandaag open tot 18:00u</span>
+                    <i class="bi bi-chevron-down ms-1"></i>
+                </div>
+                <div class="dropdown-menu c-dropdown-hours p-3">
+                    <div class="c-hours-section mb-3">
+                        <h6 class="opening-title">Roeselare</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><span>Ma - Vr:</span> 07:00 - 18:00</li>
+                            <li><span>Za:</span> 08:00 - 11:45</li>
+                            <li><span>Zo:</span> Gesloten</li>
+                        </ul>
+                    </div>
+                    <div class="c-hours-section">
+                        <h6 class="opening-title">Oudsbergen</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><span>Ma - Vr:</span> 08:00 - 17:00</li>
+                            <li><span>Za - Zo:</span> Gesloten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-xxl navbar-dark mt-3">
+            <div class="container d-flex align-items-center">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./img/willaert-logo-wit.webp" alt="Willaert" class="c-logo">
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="willaertDropdown">Willaert</a>
+                            <ul class="dropdown-menu c-dropdown-glass">
+                                <li><a class="dropdown-item" href="meerwillaert.html">Meer over Willaert</a></li>
+                                <li><a class="dropdown-item" href="geschiedenis.html">Geschiedenis</a></li>
+                                <li><a class="dropdown-item" href="missie.html">Missie</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="plantengids.html">Plantengids</a></li>
+                        <li class="nav-item"><a class="nav-link" href="webshop.html">Webshop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Inspiratiepagina</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Mijn Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                    </ul>
+                    <div class="c-header__icons d-flex text-white fs-5 align-items-center ms-xxl-4 mt-3 mt-xxl-0">
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-person"></i>
+                        <i class="bi bi-cart"></i>
+                        <div class="c-language-wrapper">
+                            <i class="bi bi-translate c-language-trigger"></i>
+                            <div class="c-language-switcher">
+                                <span class="badge rounded-pill">NL</span>
+                                <span class="badge rounded-pill">ENG</span>
+                                <span class="badge rounded-pill">FR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <nav class="c-nav-glass__breadcrumbs" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item is-home"><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+                    <li class="breadcrumb-item is-current"><i class="bi bi-cart"></i> Webshop</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="c-hero-content d-flex align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center text-white">
+                        <h1 class="c-hero-title-large">Webshop</h1>
+                        <div class="c-hero-search-box c-hero-search-box--webshop">
+                            <p class="c-hero-search-text">Webshop enkel voor Professionelen in de groensector</p>
+
+                            <form id="shopSearchForm" class="c-webshop-search-form">
+                                <div class="c-search-row">
+                                    <div class="c-input-wrapper">
+                                        <i class="bi bi-chat-left-text"></i>
+                                        <input type="text" id="descSearch" placeholder="Schrijf hier je omschrijving">
+                                    </div>
+                                    <div class="c-input-wrapper">
+                                        <i class="bi bi-rulers"></i>
+                                        <input type="text" id="sizeSearch" placeholder="Schrijf hier je maat">
+                                    </div>
+                                    <div class="c-check-wrapper">
+                                        <input type="checkbox" id="cashCarry" checked>
+                                        <label for="cashCarry">Cash & Carry</label>
+                                    </div>
+                                    <button type="submit" class="c-btn-shop-search">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="c-plantengids c-webshop">
+        <div class="container">
+            <div class="c-pg-top-bar d-flex justify-content-between align-items-center mb-5">
+                <div class="c-pg-active-filters d-flex align-items-center flex-wrap gap-2">
+                    <span class="text-muted small me-2">Filters in gebruik:</span>
+                    <div id="activeFiltersList" class="d-flex gap-2"></div>
+                    <button class="btn c-btn-clear-all ms-3" id="clearAllFilters">
+                        <i class="bi bi-trash3 me-1"></i> Alle filters wissen
+                    </button>
+                </div>
+                <div class="c-pg-results-count">
+                    <span class="fw-bold fs-5" id="plant-count">0</span>
+                    <span class="text-muted">product(en) gevonden</span>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <aside class="col-lg-3 position-relative">
+
+                    <div class="c-pg-sidebar" id="sidebarScroll">
+
+                        <div class="accordion c-glass-accordion" id="mainFilterAccordion">
+
+                            <div class="accordion-item border-0">
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allShopFilters">
+                                        Filters
+                                    </button>
+                                </h2>
+
+                                <div id="allShopFilters" class="accordion-collapse collapse">
+
+                                    <div class="accordion-body p-0">
+
+                                        <div class="accordion c-glass-accordion" id="filterAccordion">
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#filterCatalog">
+                                                        Cataloguskeuze
+                                                    </button>
+                                                </h2>
+
+                                                <div id="filterCatalog" class="accordion-collapse collapse show">
+
+                                                    <div class="accordion-body">
+
+                                                        <div class="c-shop-cat-list">
+
+                                                            <div class="cat-item c-cat-filter" data-group="catalogus" data-filter="tuinaanleg">
+                                                                Tuinaanleg
+                                                                <i class="bi bi-chevron-right"></i>
+                                                            </div>
+
+                                                            <div class="cat-item c-cat-filter" data-group="catalogus" data-filter="tuincentrum">
+                                                                Tuincentrum
+                                                                <i class="bi bi-chevron-down"></i>
+                                                            </div>
+
+                                                            <div class="ps-3 mb-2">
+
+                                                                <div class="cat-sub-item c-cat-filter small text-muted py-1" data-group="catalogus" data-filter="weekaanbieding">
+                                                                    Weekaanbieding
+                                                                </div>
+
+                                                                <div class="cat-sub-item c-cat-filter small text-muted py-1" data-group="catalogus" data-filter="reservaties">
+                                                                    Reservaties
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="cat-item c-cat-filter border-0" data-group="catalogus" data-filter="toebehoren">
+                                                                Toebehoren
+                                                                <i class="bi bi-chevron-right"></i>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#masterRubrieken">
+                                                        Selecteer een rubriek
+                                                    </button>
+                                                </h2>
+
+                                                <div id="masterRubrieken" class="accordion-collapse collapse">
+
+                                                    <div class="accordion-body pe-2">
+
+                                                        <div class="accordion c-sub-accordion" id="subRubriekAccordion">
+                                                            <div class="accordion-item border-0">
+
+                                                                <div class="accordion-body py-2 px-1">
+
+                                                                    <label class="c-filter-pill m-0 w-100">
+
+                                                                        <input type="checkbox" class="filter-checkbox" data-group="rubriek" data-filter="alle">
+
+                                                                        <span class="pill-label fw-bold">
+                                                                            Alle Rubrieken
+                                                                        </span>
+
+                                                                    </label>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="accordion-item border-0">
+
+                                                                <h2 class="accordion-header">
+                                                                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#rubAfscherming">
+                                                                        Afscherming
+                                                                    </button>
+                                                                </h2>
+
+                                                                <div id="rubAfscherming" class="accordion-collapse collapse" data-bs-parent="#subRubriekAccordion">
+
+                                                                    <div class="accordion-body px-1">
+
+                                                                        <div class="c-filter-list">
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    Ericamatten
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    Kastanje afsluiting
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    Afschermnetten
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    Gaas en afdeknetten
+                                                                                </span>
+                                                                            </label>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="accordion-item border-0">
+
+                                                                <h2 class="accordion-header">
+                                                                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#rubKledij">
+                                                                        Beschermkledij
+                                                                    </button>
+                                                                </h2>
+
+                                                                <div id="rubKledij" class="accordion-collapse collapse" data-bs-parent="#subRubriekAccordion">
+
+                                                                    <div class="accordion-body px-1">
+
+                                                                        <div class="c-filter-list">
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    handschoenen
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    sproeimasker
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    gezichtsbescherming
+                                                                                </span>
+                                                                            </label>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="accordion-item border-0">
+
+                                                                <h2 class="accordion-header">
+                                                                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#rubBodem">
+                                                                        Bodembedekking
+                                                                    </button>
+                                                                </h2>
+
+                                                                <div id="rubBodem" class="accordion-collapse collapse" data-bs-parent="#subRubriekAccordion">
+
+                                                                    <div class="accordion-body px-1">
+
+                                                                        <div class="c-filter-list">
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    kiezel en grind
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    lava
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    schors
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    gronddoeken
+                                                                                </span>
+                                                                            </label>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="accordion-item border-0">
+
+                                                                <h2 class="accordion-header">
+                                                                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#rubGereedschap">
+                                                                        Gereedschap
+                                                                    </button>
+                                                                </h2>
+
+                                                                <div id="rubGereedschap" class="accordion-collapse collapse" data-bs-parent="#subRubriekAccordion">
+
+                                                                    <div class="accordion-body px-1">
+
+                                                                        <div class="c-filter-list">
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    spaden
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    snoeigereedschap
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    kruiwagens
+                                                                                </span>
+                                                                            </label>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="accordion-item border-0">
+
+                                                                <h2 class="accordion-header">
+                                                                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#rubVijver">
+                                                                        Vijver
+                                                                    </button>
+                                                                </h2>
+
+                                                                <div id="rubVijver" class="accordion-collapse collapse" data-bs-parent="#subRubriekAccordion">
+
+                                                                    <div class="accordion-body px-1">
+
+                                                                        <div class="c-filter-list">
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    vijverpompen
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    verlichting
+                                                                                </span>
+                                                                            </label>
+
+                                                                            <label class="c-filter-pill">
+                                                                                <input type="checkbox" class="filter-checkbox">
+                                                                                <span class="pill-label">
+                                                                                    onderhoud
+                                                                                </span>
+                                                                            </label>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+                <main class="col-lg-9">
+                    <div class="row g-4" id="shopGrid">
+                    </div>
+
+                    <div class="text-center mt-5 pt-4">
+                        <button class="btn c-btn-primary btn-lg px-5 d-none" id="loadMoreBtn">
+                            Bekijk meer
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <section class="c-newsletter">
+        <div class="container">
+            <div class="c-newsletter__card" id="newsletterCard">
+                <div id="newsletterSuccess" style="display: none;">
+                    <div id="lottieContainer" style="width: 150px; height: 150px; margin: 0 auto;"></div>
+                    <h2 class="c-newsletter__title">Bedankt voor uw inschrijving!</h2>
+                    <p class="c-newsletter__text">U ontvangt spoedig onze laatste groene updates.</p>
+                </div>
+                <div id="newsletterFormContent">
+                    <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
+                    <p class="c-newsletter__text">
+                        Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
+                    </p>
+                    <form class="c-newsletter__form" id="newsletterForm" novalidate>
+                        <div class="c-newsletter__interests">
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuinaanleg
+                            </label>
+                            <label class="c-newsletter__check-container">
+                                <input type="checkbox" checked>
+                                <span class="c-newsletter__checkmark"></span>
+                                Tuincentrum
+                            </label>
+                        </div>
+                        <div class="c-newsletter__input-wrapper">
+                            <div class="c-newsletter__input-group">
+                                <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" id="newsletterEmail" required>
+                                <button type="submit" class="c-newsletter__submit">Abonneren</button>
+                            </div>
+                            <span class="c-newsletter__error-msg" id="emailError">Oeps! Dit lijkt geen geldig e-mailadres.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</body>
+<footer class="c-footer">
+    <div class="container">
+        <div class="row align-items-stretch">
+            <div class="col-lg-3 c-footer__col">
+                <div class="c-footer__address">
+                    <p>HAZEGOEDWEG 5<br>8800 Roeselare (BE)</p>
+                    <p>Email: <a href="mailto:Info@willaert.be">Info@willaert.be</a></p>
+                </div>
+                <div class="c-footer__address mt-4">
+                    <p>INDUSTRIEWEG NOORD 1173<br>3660 OUDSBERGEN (BE)</p>
+                    <p>Email: <a href="mailto:Oudsbergen@willaert.be">Oudsbergen@willaert.be</a></p>
+                </div>
+            </div>
+            <div class="col-lg-6 c-footer__col c-footer__col--center">
+                <h3 class="c-footer__title">Willaert Boomkwekerij</h3>
+                <p class="c-footer__intro">
+                    Volg ons op sociale media voor dagelijkse inspiratie, de nieuwste leveringen en een blik achter de schermen bij de grootste plantenmarkt van België.
+                </p>
+                <p class="c-footer__tel">Tel: <a href="tel:+32051241344">+32(0)51/24 13 44</a></p>
+
+                <div class="c-footer__socials">
+                    <a href="https://www.instagram.com/willaert_planten/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/Willaert.be/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.youtube.com/watch?v=q-GO-5n5TX4"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/willaertnv/?originalSubdomain=be"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 c-footer__col">
+                <h3 class="c-footer__title">Pagina's</h3>
+                <ul class="c-footer__links">
+                    <li><a href="features.html">Onze expertise</a></li>
+                    <li><a href="inspiratie.html">Inspiratie</a></li>
+                    <li><a href="plantengids.html">Plantengids</a></li>
+                    <li><a href="webshop.html">Webshop</a></li>
+                    <li><a href="praktisch.html">Praktisch</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="c-footer__bottom">
+            <p>Geen particuliere verkoop - groothandel voor professionelen in de groensector</p>
+            <p>Copyright Willaert NV - Deze website maakt gebruikt van cookies</p>
+        </div>
+    </div>
+</footer>
+
+</html>

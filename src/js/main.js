@@ -9,4 +9,6 @@ import './nieuwsbrief.js';
 import './login.js';
 import './plantengids.js';
 import './gidsdetail.js';
+import './shop.js';
+import './webdetail.js';
 

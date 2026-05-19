@@ -1,34 +1,51 @@
 [
   {
-    "id": 1,
-    "naam": "Abelia grandiflora 'Tricolor Charm'",
-    "status": "in stock",
-    "potmaat": "25-30 C",
-    "genus": "Abelia",
-    "categorie": "heesters",
-    "bloemkleur": "roze",
-    "bloeiperiode": ["juli", "augustus", "september"],
-    "hoogte": "50-100 cm",
-    "standplaats": "halfschaduw, zon",
-    "wintergroen": "ja",
-    "toepassing": ["stadstuin", "border", "cottage tuin"],
-    "grondsoort": "vochtig",
-    "vorm": "opgaand",
-    "bladeren": "bont",
-    "vlinders": "ja",
-    "bijen": "ja",
-    "herfstverkleuring": "ja",
-    "afbeelding": "./img/plant1.jpg",
-    "beschrijving": "De Abelia 'Tricolor Charm' is een elegante, half-wintergroene struik die bekend staat om zijn uitzonderlijk lange bloeiperiode en sierlijke, overhangende groeiwijze. De bonte bladeren verkleuren prachtig gedurende de seizoenen.",
-    "reviews": [
-      { "user": "GroenVingertje", "rating": 5, "comment": "Prachtige kleuren in de herfst, echt een aanrader voor de border." },
-      { "user": "Jan Tuinman", "rating": 4, "comment": "Groeit gestaag en de bijen zijn er dol op." }
-    ]
+  "id": 1,
+  "naam": "Abelia grandiflora 'Tricolor Charm'",
+  "status": "in stock",
+  "prijs": 5.99,
+  "staffel": {
+    "1": 5.99,
+    "10": 5.49,
+    "100": 4.99
   },
+  "potmaat": "25-30 C",
+  "genus": "Abelia",
+  "categorie": "heesters",
+  "bloemkleur": "roze",
+  "bloeiperiode": ["juli", "augustus", "september"],
+  "hoogte": "50-100 cm",
+  "standplaats": "halfschaduw, zon",
+  "wintergroen": "ja",
+  "toepassing": ["stadstuin", "border", "cottage tuin"],
+  "grondsoort": "vochtig",
+  "vorm": "opgaand",
+  "bladeren": "bont",
+  "vlinders": "ja",
+  "bijen": "ja",
+  "herfstverkleuring": "ja",
+  "afbeelding": "./img/plant1(2).jpg",
+  
+  "extra_fotos": [
+    "./img/plant1(3).jpg"
+  ],
+  
+  "beschrijving": "De Abelia 'Tricolor Charm' is een elegante, half-wintergroene struik die bekend staat om zijn uitzonderlijk lange bloeiperiode en sierlijke, overhangende groeiwijze. De bonte bladeren verkleuren prachtig gedurende de seizoenen.",
+  "reviews": [
+    { "user": "GroenVingertje", "rating": 5, "comment": "Prachtige kleuren in de herfst, echt een aanrader voor de border." },
+    { "user": "Jan Tuinman", "rating": 4, "comment": "Groeit gestaag en de bijen zijn er dol op." }
+  ]
+},
   {
     "id": 2,
     "naam": "Echinacea purpurea 'Magnus'",
     "status": "in stock",
+    "prijs": 7.99,
+    "staffel": {
+    "1": 7.99,
+    "10": 7.49,
+    "100": 6.99
+    },
     "potmaat": "25-35 C",
     "genus": "Echinacea",
     "categorie": "vaste planten",
@@ -43,7 +60,11 @@
     "bladeren": "groen blad",
     "vlinders": "ja",
     "bijen": "ja",
-    "afbeelding": "./img/plant2.jpg",
+    "afbeelding": "./img/plant2(2).jpg",
+  
+  "extra_fotos": [
+    "./img/plant2(3).jpg"
+  ],
     "beschrijving": "De Rode Zonnehoed 'Magnus' is een klassieker in de border. De grote paarse bloemen met hun opvallende oranjebruine kegel trekken talloze vlinders en bijen aan van midzomer tot de herfst.",
     "reviews": [
       { "user": "Lieve_L", "rating": 5, "comment": "Blijft elk jaar trouw terugkomen. Sterke plant!" }
@@ -53,6 +74,12 @@
     "id": 3,
     "naam": "Pennisetum alopecuroides 'Hameln'",
     "status": "out of stock",
+    "prijs": 4.99,
+    "staffel": {
+    "1": 4.99,
+    "10": 4.49,
+    "100": 3.99
+    },
     "potmaat": "10-20 C",
     "genus": "Pennisetum",
     "categorie": "siergrassen",
@@ -66,7 +93,11 @@
     "vorm": "rond",
     "bladeren": "groen blad",
     "herfstverkleuring": "ja",
-    "afbeelding": "./img/plant3.jpg",
+    "afbeelding": "./img/plant3(2).jpg",
+    "extra_fotos": [
+      "./img/plant3(3).jpg",
+      "./img/plant3(4).jpg"
+    ],
     "beschrijving": "Dit Lampepoetsergras vormt compacte polletjes van smal groen blad. In de nazomer verschijnen de karakteristieke zachte, borstelige bloemaren die tot diep in de winter decoratief blijven.",
     "reviews": [
       { "user": "SiergrasFan", "rating": 4, "comment": "Mooie wuivende pluimen, geeft structuur aan de wintertuin." }
@@ -76,6 +107,12 @@
     "id": 4,
     "naam": "Acer palmatum 'Atropurpureum'",
     "status": "in stock",
+    "prijs": 10.99,
+    "staffel": {
+    "1": 10.99,
+    "10": 10.49,
+    "100": 9.99
+    },
     "potmaat": "25-30 C",
     "genus": "Acer",
     "categorie": "bomen",
@@ -99,6 +136,12 @@
     "id": 5,
     "naam": "Lavandula angustifolia 'Hidcote'",
     "status": "in stock",
+    "prijs": 2.99,
+    "staffel": {
+    "1": 2.99,
+    "10": 2.49,
+    "100": 1.99
+    } ,
     "potmaat": "10 C",
     "genus": "Lavandula",
     "categorie": "vaste planten",
@@ -113,7 +156,10 @@
     "bladeren": "grijs",
     "vlinders": "ja",
     "bijen": "ja",
-    "afbeelding": "./img/plant5.jpg",
+    "afbeelding": "./img/plant5(2).jpg",
+    "extra_fotos": [
+      "./img/plant5(3).jpg"
+    ],
     "beschrijving": "De 'Hidcote' is de bekendste lavendelsoort. Hij blijft compacter dan andere soorten en bloeit met intens dieppaarse bloemen. De geur is heerlijk en de bladeren blijven in de winter zilverachtig grijs.",
     "reviews": [
       { "user": "ProvenceLover", "rating": 5, "comment": "Heerlijke geur, ik waan me direct in Frankrijk." },
@@ -124,6 +170,12 @@
     "id": 6,
     "naam": "Hydrangea paniculata 'Limelight'",
     "status": "in stock",
+    "prijs": 1.99,
+    "staffel": {
+    "1": 1.99,
+    "10": 1.49,
+    "100": 0.99
+    } ,
     "potmaat": "45 C",
     "genus": "Hydrangea",
     "categorie": "heesters",
@@ -136,7 +188,11 @@
     "grondsoort": "vochtig",
     "vorm": "opgaand",
     "bladeren": "groen blad",
-    "afbeelding": "./img/plant6.jpg",
+    "afbeelding": "./img/plant6(2).jpg",
+    "extra_fotos": [
+      "./img/plant6(3).jpg",
+      "./img/plant6(4).jpg"
+    ],
     "beschrijving": "De Pluimhortensia 'Limelight' staat bekend om zijn sterke takken en enorme bloempluimen. De bloemen beginnen limoengroen en verkleuren langzaam naar roomwit en uiteindelijk zachtroze in de herfst.",
     "reviews": [
       { "user": "Bloem_M", "rating": 4, "comment": "Heel sterk, ook na een flinke regenbui blijven de pluimen rechtop staan." }
@@ -146,6 +202,12 @@
     "id": 7,
     "naam": "Fagus sylvatica 'Atropunicea'",
     "status": "out of stock",
+    "prijs": 8.99,
+    "staffel": {
+    "1": 8.99,
+    "10": 8.49,
+    "100": 7.99
+    }   ,
     "potmaat": "30-40 C",
     "genus": "Fagus",
     "categorie": "haagplanten",
@@ -166,6 +228,12 @@
     "id": 8,
     "naam": "Salvia nemorosa 'Caradonna'",
     "status": "in stock",
+    "prijs": 5.99,
+    "staffel": {
+    "1": 5.99,
+    "10": 5.49,
+    "100": 4.99
+    } ,
     "potmaat": "15-30 C",
     "genus": "Salvia",
     "categorie": "vaste planten",
@@ -180,7 +248,11 @@
     "bladeren": "groen blad",
     "vlinders": "ja",
     "bijen": "ja",
-    "afbeelding": "./img/plant8.jpg",
+    "afbeelding": "./img/plant8(2).jpg",
+    "extra_fotos": [
+      "./img/plant8(3).jpg",
+      "./img/plant8(4).jpg"
+    ],
     "beschrijving": "Salvia 'Caradonna' valt op door zijn zeer donkere, bijna zwarte bloemstengels. De dieppaarse bloemaren staan kaarsrecht omhoog en bloeien wekenlang door.",
     "reviews": [
       { "user": "GardenDesign", "rating": 5, "comment": "Combineert fantastisch met grassen en gele bloemen." }
@@ -190,6 +262,12 @@
     "id": 9,
     "naam": "Prunus laurocerasus 'Novita'",
     "status": "in stock",
+    "prijs": 1.99,
+    "staffel": {
+    "1": 1.99,
+    "10": 1.49,
+    "100": 0.99
+    },
     "potmaat": "10-20 C",
     "genus": "Prunus",
     "categorie": "haagplanten",
@@ -202,7 +280,10 @@
     "grondsoort": "klei",
     "vorm": "opgaand",
     "bladeren": "groen blad",
-    "afbeelding": "./img/plant9.jpg",
+    "afbeelding": "./img/plant9(2).jpg",
+    "extra_fotos": [
+      "./img/plant9(3).jpg"
+    ],
     "beschrijving": "De Laurierkers 'Novita' is een verbeterde versie van de 'Rotundifolia'. Hij is sterker, gezonder en groeit zeer snel dicht, waardoor hij ideaal is voor een bladhoudende privacyhaag.",
     "reviews": [
       { "user": "An_Privacy", "rating": 4, "comment": "Binnen 2 jaar een volledig dichte haag. Erg tevreden." }
@@ -212,6 +293,12 @@
     "id": 10,
     "naam": "Betula utilis 'Doorenbos'",
     "status": "in stock",
+    "prijs": 1.99,
+    "staffel": {
+    "1": 1.99,
+    "10": 1.49,
+    "100": 0.99
+    },
     "potmaat": "25-30 C",
     "genus": "Betula",
     "categorie": "bomen",
@@ -225,7 +312,11 @@
     "vorm": "opgaand",
     "bladeren": "groen blad",
     "herfstverkleuring": "ja",
-    "afbeelding": "./img/plant10.jpg",
+    "afbeelding": "./img/plant10(2).jpg",
+    "extra_fotos": [
+      "./img/plant10(3).jpg",
+      "./img/plant10(4).jpg"
+    ],
     "beschrijving": "De Himalayaberk 'Doorenbos' is geliefd om zijn extreem witte bast die op latere leeftijd prachtig afbladdert. In de winter vormt de witte bast een schitterend contrast met de rest van de tuin.",
     "reviews": []
   },
@@ -233,6 +324,12 @@
     "id": 11,
     "naam": "Clematis 'The President'",
     "status": "out of stock",
+    "prijs": 3.59,
+    "staffel": {
+    "1": 3.59,
+    "10": 3.49,
+    "100": 2.99
+    },
     "potmaat": "5 C",
     "genus": "Clematis",
     "categorie": "klimplanten",
@@ -256,6 +353,12 @@
     "id": 12,
     "naam": "Helleborus orientalis",
     "status": "in stock",
+    "prijs": 6.99,
+    "staffel": {
+    "1": 6.99,
+    "10": 6.32,
+    "100": 5.99
+    },
     "potmaat": "25-40 C",
     "genus": "Helleborus",
     "categorie": "vaste planten",
@@ -275,10 +378,16 @@
   },
   {
     "id": 13,
-    "naam": "Rosa 'Incredible'",
+    "naam": "Rosa 'Bonica ®",
     "status": "out of stock",
+    "prijs": 1.99,
+    "staffel": {
+    "1": 1.99,
+    "10": 1.32,
+    "100": 0.99
+    },
     "potmaat": "25-30 C",
-    "genus": "Rosa",
+    "genus": "HEESTERROOS 'BONICA'",
     "categorie": "rozen",
     "bloemkleur": "geel",
     "bloeiperiode": ["juni", "juli", "augustus", "september", "oktober"],
@@ -298,6 +407,12 @@
     "id": 14,
     "naam": "Buxus sempervirens",
     "status": "in stock",
+    "prijs": 11.99,
+    "staffel": {
+    "1": 11.99,
+    "10": 11.32,
+    "100": 10.99
+    },
     "potmaat": "25-30 C",
     "genus": "Buxus",
     "categorie": "haagplanten",
@@ -310,7 +425,10 @@
     "grondsoort": "kalk",
     "vorm": "rond",
     "bladeren": "groen blad",
-    "afbeelding": "./img/plant14.jpg",
+    "afbeelding": "./img/plant14(2).jpg",
+    "extra_fotos": [
+      "./img/plant14(3).jpg"
+    ],
     "beschrijving": "De klassieke Buxus is de basis voor elke strakke tuin. Ideaal voor vormsnoei of als laag haagje. Hij verdraagt schaduw zeer goed en blijft het hele jaar door groen.",
     "reviews": [
       { "user": "Retro_Tuin", "rating": 3, "comment": "Altijd mooi, maar let op de buxusmot!" }
@@ -320,6 +438,12 @@
     "id": 15,
     "naam": "Fragaria vesca",
     "status": "in stock",
+    "prijs": 2.99,
+    "staffel": {
+    "1": 2.99,
+    "10": 2.32,
+    "100": 1.99
+    },
     "potmaat": "25-30 C",
     "genus": "Fragaria",
     "categorie": "fruit",
@@ -334,7 +458,10 @@
     "bladeren": "groen blad",
     "vogels": "ja",
     "inheems": "ja",
-    "afbeelding": "./img/plant15.jpg",
+    "afbeelding": "./img/plant15(2).jpg",
+    "extra_fotos": [
+      "./img/plant15(3).jpg"
+    ],
     "beschrijving": "De bosaardbei is een charmante inheemse bodembedekker. De kleine witte bloemetjes worden gevolgd door piepkleine, maar zeer smaakvolle en aromatische rode aardbeien.",
     "reviews": [
       { "user": "EcoKees", "rating": 5, "comment": "Groeit overal en de kinderen vinden de besjes heerlijk." }
