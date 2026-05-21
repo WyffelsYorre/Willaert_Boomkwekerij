@@ -11,4 +11,5 @@ import './plantengids.js';
 import './gidsdetail.js';
 import './shop.js';
 import './webdetail.js';
+import './inspiratie.js';
 

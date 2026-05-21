@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <header class="c-nav-white">
         <div class="c-nav-white__top-bar">
             <div class="dropdown">
@@ -86,54 +85,153 @@
                         <i class="bi bi-house-door"></i> Home
                     </a>
                     <div class="breadcrumb-item is-current">
-                        Missie
+                        <i class="bi bi-lightbulb"></i>
+                        Inspiratiepagina
                     </div>
                 </div>
-
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="c-about">
+        <section class="c-inspiration">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 mb-4 mb-lg-0">
-                        <div class="c-about__container">
-                            <h1 class="c-about__title">MISSIE</h1>
-                            <div class="c-about__text">
-                                <img src="./img/missie.jpg" alt="Willaert Missie Visie" class="c-about__image-float">
+                <h1 class="c-inspiration__title">
+                    Welkom op onze <span>inspiratiepagina</span>
+                </h1>
 
-                                <h2 class="c-about__subtitle">Visie</h2>
-                                <p>Willaert streeft ernaar uw totaalpartner in de sector te zijn. Een missie die om een sterk doorgedrongen bedrijfsvisie vraagt. De bedrijfsvisie van Willaert bestaat uit <strong>4 basiselementen</strong>, waarbij elke pijler ons engagement naar onze klanten toe benadrukt.</p>
+                <div class="c-inspiration__filters" id="inspirationFilters">
+                    <button class="c-inspiration__btn c-inspiration__btn--active" data-filter="all">Alle berichten</button>
+                    <button class="c-inspiration__btn" data-filter="nieuws">Nieuws</button>
+                    <button class="c-inspiration__btn" data-filter="trends">Trends</button>
+                    <button class="c-inspiration__btn" data-filter="tips">Tips & Tricks</button>
+                    <button class="c-inspiration__btn" data-filter="kijker">Planten in de kijker</button>
+                </div>
 
-                                <h2 class="c-about__subtitle">Uw succes</h2>
-                                <p>Laat daar niet de minste twijfel over bestaan. Onze acties richten zich op het <strong>succes</strong> en <strong>welslagen</strong> van uw onderneming als professionele afnemer.</p>
+                <div class="row g-4" id="inspirationGrid">
 
-                                <h2 class="c-about__subtitle">Partner</h2>
-                                <p>We beogen in de eerste plaats een <strong>totaalpartner</strong> te zijn. Dit impliceert dat wij u graag het hele gamma van tuinbenodigdheden aanbieden, teneinde u perfect van dienst te kunnen zijn.</p>
-
-                                <h2 class="c-about__subtitle">Kwaliteit</h2>
-                                <p>Boomkwekerij Willaert staat voor <strong>topkwaliteit</strong>. Door kwaliteit en efficiëntie te garanderen, willen we een plaats verwerven op Europees niveau en onze stempel drukken op de commercialisatie van tuinplanten.</p>
-
-                                <h2 class="c-about__subtitle">Mensen</h2>
-                                <p>Onze <strong>medewerkers, klanten</strong> en <strong>leveranciers</strong> staan <strong>centraal</strong> binnen onze onderneming. Iedere werknemer zet op zijn niveau onze filosofie inzake <strong>veiligheid, welzijn</strong> en <strong>milieu</strong> in de praktijk om.</p>
+                    <div class="col-md-6 col-lg-4 c-inspiration-item" data-category="kijker">
+                        <article class="c-inspiration-card">
+                            <div class="c-inspiration-card__image-wrapper">
+                                <img src="./img/kordesrozen.jpg" alt="Kordesrozen" class="c-inspiration-card__image">
+                                <span class="c-inspiration-card__badge">Planten in de kijker</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="c-about__sidebar">
-                            <a href="meerwillaert.html" class="btn-side btn-side--light">Meer over Willaert</a>
-                            <a href="geschiedenis.html" class="btn-side btn-side--light">Geschiedenis</a>
-                            <a href="missie.html" class="btn-side btn-side--blue">Missie</a>
-                        </div>
+                            <div class="c-inspiration-card__content">
+                                <h2 class="c-inspiration-card__title">Ontdek de veelzijdige schoonheid van Kordesrozen</h2>
+                                <p class="c-inspiration-card__text">
+                                    Kordesrozen staan bekend om hun uitstekende kwaliteit, sterke gezondheid en prachtige bloemen. Of je nu een liefhebber bent van elegante klassieke rozen of moderne variëteiten, er is altijd een roos die past. In dit bericht lichten we de nieuwste soorten uit.
+                                </p>
+                                <div class="c-inspiration-card__footer">
+                                    <time class="c-inspiration-card__date" datetime="2026-02-04">04.02.2026</time>
+                                    <a href="#" class="c-inspiration-card__link">Lees meer</a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
 
+                    <div class="col-md-6 col-lg-4 c-inspiration-item" data-category="trends">
+                        <article class="c-inspiration-card">
+                            <div class="c-inspiration-card__image-wrapper">
+                                <img src="./img/klimaatbomen.jpg" alt="Klimaatbomen" class="c-inspiration-card__image">
+                                <span class="c-inspiration-card__badge">Trends</span>
+                            </div>
+                            <div class="c-inspiration-card__content">
+                                <h2 class="c-inspiration-card__title">De opmars van klimaatbomen in de Belgische tuin</h2>
+                                <p class="c-inspiration-card__text">
+                                    Met de warmere en drogere zomers van tegenwoordig verandert de vraag van de consument. Klimaatbomen die diep wortelen en goed tegen hitte kunnen, zijn dé trend van dit seizoen. Ontdek welke soorten nu stormlopen in de boomkwekerij.
+                                </p>
+                                <div class="c-inspiration-card__footer">
+                                    <time class="c-inspiration-card__date" datetime="2026-02-18">18.02.2026</time>
+                                    <a href="#" class="c-inspiration-card__link">Lees meer</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 c-inspiration-item" data-category="tips">
+                        <article class="c-inspiration-card">
+                            <div class="c-inspiration-card__image-wrapper">
+                                <img src="./img/snoeien.jpg" alt="Snoeicursus" class="c-inspiration-card__image">
+                                <span class="c-inspiration-card__badge">Tips & Tricks</span>
+                            </div>
+                            <div class="c-inspiration-card__content">
+                                <h2 class="c-inspiration-card__title">3 Onmisbare snoeitips voor het vroege voorjaar</h2>
+                                <p class="c-inspiration-card__text">
+                                    Het voorjaar staat voor de deur en dat betekent werk aan de winkel! Een verkeerde snoeibeurt kan de bloei van heesters flink verpesten. Met deze drie simpele basisregels adviseer je jouw klanten perfect over de voorjaarssnoei.
+                                </p>
+                                <div class="c-inspiration-card__footer">
+                                    <time class="c-inspiration-card__date" datetime="2026-03-02">02.03.2026</time>
+                                    <a href="#" class="c-inspiration-card__link">Lees meer</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 c-inspiration-item" data-category="nieuws">
+                        <article class="c-inspiration-card">
+                            <div class="c-inspiration-card__image-wrapper">
+                                <img src="./img/cash-carry.jpg" alt="Cash & Carry" class="c-inspiration-card__image">
+                                <span class="c-inspiration-card__badge">Nieuws</span>
+                            </div>
+                            <div class="c-inspiration-card__content">
+                                <h2 class="c-inspiration-card__title">Uitbreiding in onze Cash & Carry in Roeselare</h2>
+                                <p class="c-inspiration-card__text">
+                                    Om groenprofessionals nog sneller en efficiënter te bedienen, hebben we onze buitenafdeling volledig heringericht. Vanaf deze week geniet je van een overzichtelijker aanbod aan vaste planten en een vlottere doorstroom bij het laden.
+                                </p>
+                                <div class="c-inspiration-card__footer">
+                                    <time class="c-inspiration-card__date" datetime="2026-03-15">15.03.2026</time>
+                                    <a href="#" class="c-inspiration-card__link">Lees meer</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 c-inspiration-item" data-category="kijker">
+                        <article class="c-inspiration-card">
+                            <div class="c-inspiration-card__image-wrapper">
+                                <img src="./img/hydrangea.jpg" alt="Hydrangea" class="c-inspiration-card__image">
+                                <span class="c-inspiration-card__badge">Planten in de kijker</span>
+                            </div>
+                            <div class="c-inspiration-card__content">
+                                <h2 class="c-inspiration-card__title">Hydrangea 'Strong Annabelle': De koningin van de schaduw</h2>
+                                <p class="c-inspiration-card__text">
+                                    Met haar gigantische witte bloembollen en stevige stengels die niet omvallen bij een flinke regenbui, blijft deze hortensia een absolute hardloper. Lees hier alles over de ideale standplaats en de verkoopargumenten voor jouw tuincentrum.
+                                </p>
+                                <div class="c-inspiration-card__footer">
+                                    <time class="c-inspiration-card__date" datetime="2026-04-01">01.04.2026</time>
+                                    <a href="#" class="c-inspiration-card__link">Lees meer</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 c-inspiration-item" data-category="trends">
+                        <article class="c-inspiration-card">
+                            <div class="c-inspiration-card__image-wrapper">
+                                <img src="./img/biodiversiteit.jpg" alt="Biodiversiteit" class="c-inspiration-card__image">
+                                <span class="c-inspiration-card__badge">Trends</span>
+                            </div>
+                            <div class="c-inspiration-card__content">
+                                <h2 class="c-inspiration-card__title">De diervriendelijke tuin: Focus op biodiversiteit</h2>
+                                <p class="c-inspiration-card__text">
+                                    Consumenten planten niet meer alleen voor het oog, maar ook voor de bijen, vlinders en vogels. Diervriendelijke borders met inheemse beplanting zijn populairder dan ooit. Wij hebben een kant-en-klaar concept samengesteld voor jouw winkel.
+                                </p>
+                                <div class="c-inspiration-card__footer">
+                                    <time class="c-inspiration-card__date" datetime="2026-04-12">12.04.2026</time>
+                                    <a href="#" class="c-inspiration-card__link">Lees meer</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                <div class="c-inspiration__footer-action">
+                    <button class="c-inspiration__more-btn">Bekijk meer</button>
                 </div>
             </div>
         </section>
     </main>
-
     <section class="c-newsletter">
         <div class="container">
             <div class="c-newsletter__card" id="newsletterCard">
@@ -142,11 +240,13 @@
                     <h2 class="c-newsletter__title">Bedankt voor uw inschrijving!</h2>
                     <p class="c-newsletter__text">U ontvangt spoedig onze laatste groene updates.</p>
                 </div>
+
                 <div id="newsletterFormContent">
                     <h2 class="c-newsletter__title">Blijf op de hoogte van ons groene aanbod</h2>
                     <p class="c-newsletter__text">
                         Ontvang als eerste updates over ons assortiment, seizoens-trends en nieuws uit onze Cash & Carry.
                     </p>
+
                     <form class="c-newsletter__form" id="newsletterForm" novalidate>
                         <div class="c-newsletter__interests">
                             <label class="c-newsletter__check-container">
@@ -160,6 +260,7 @@
                                 Tuincentrum
                             </label>
                         </div>
+
                         <div class="c-newsletter__input-wrapper">
                             <div class="c-newsletter__input-group">
                                 <input type="email" placeholder="Vul hier je email in..." class="c-newsletter__input" id="newsletterEmail" required>
@@ -213,6 +314,7 @@
             </div>
 
         </div>
+
         <div class="c-footer__bottom">
             <p>Geen particuliere verkoop - groothandel voor professionelen in de groensector</p>
             <p>Copyright Willaert NV - Deze website maakt gebruikt van cookies</p>
