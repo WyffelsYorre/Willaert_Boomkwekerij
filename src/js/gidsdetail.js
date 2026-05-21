@@ -1,21 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- 1. CONFIGURATIE & SELECTOREN ---
     const urlParams = new URLSearchParams(window.location.search);
     const plantId = parseInt(urlParams.get('id'));
-    
-    // Check op welke pagina we zijn om de redirect-loop te voorkomen
+
     const isDetailPage = window.location.pathname.includes('plantengidsdetail.html');
 
-    // Als we op de detailpagina zijn maar GEEN id hebben, ga terug naar het overzicht
     if (isDetailPage && !plantId) {
         window.location.href = 'plantengids.html';
         return;
     }
 
-    // Als we NIET op de detailpagina zijn, stop dan dit script volledig
     if (!isDetailPage) return;
 
-    // Selectoren voor de content
     const detailTitle = document.getElementById('detailTitle');
     const breadcrumbPlantName = document.getElementById('breadcrumbPlantName');
     const plantMainImg = document.getElementById('plantMainImg');
@@ -98,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     function setupNavigation(allPlants, currentIndex) {
-        // Oneindige loop: terug naar begin als we bij het einde zijn
         const prevIndex = (currentIndex - 1 + allPlants.length) % allPlants.length;
         const nextIndex = (currentIndex + 1) % allPlants.length;
 
